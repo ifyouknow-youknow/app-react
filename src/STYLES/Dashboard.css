@@ -1,0 +1,264 @@
+/* HOME PANEL 1 */
+@media (max-width: 500px) {
+  .dash-panel-1 {
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .dash-block {
+    padding: 1em;
+    background-color: white;
+    border-radius: 14px;
+  }
+  .dash-block h1 {
+    font-size: 22px;
+  }
+  .dash-block button {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    background-color: #117dfa;
+    color: white;
+    padding: 10px;
+    border: 0;
+    border-radius: 6px;
+  }
+  .dash-btn-icon {
+    font-size: 16px;
+    color: white;
+  }
+}
+@media (min-width: 500px) and (max-width: 600px) {
+  .dash-panel-1 {
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .dash-block {
+    padding: 1em;
+    background-color: white;
+    border-radius: 14px;
+  }
+  .dash-block h1 {
+    font-size: 24px;
+    letter-spacing: -1px;
+  }
+  .dash-block button {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    background-color: #117dfa;
+    color: white;
+    padding: 10px 14px;
+    border: 0;
+    border-radius: 8px;
+  }
+  .dash-btn-icon {
+    font-size: 20px;
+    color: white;
+  }
+}
+@media (min-width: 600px) and (max-width: 700px) {
+  .dash-panel-1 {
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .dash-block {
+    padding: 1em;
+    background-color: white;
+    border-radius: 14px;
+  }
+  .dash-block h1 {
+    font-size: 24px;
+    letter-spacing: -1px;
+  }
+  .dash-block button {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    background-color: #117dfa;
+    color: white;
+    padding: 10px 14px;
+    border: 0;
+    border-radius: 8px;
+  }
+  .dash-btn-icon {
+    font-size: 20px;
+    color: white;
+  }
+}
+@media (min-width: 700px) and (max-width: 800px) {
+  .dash-panel-1 {
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .dash-block {
+    padding: 1em;
+    background-color: white;
+    border-radius: 14px;
+  }
+  .dash-block h1 {
+    font-size: 24px;
+    letter-spacing: -1px;
+  }
+  .dash-block button {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    background-color: #117dfa;
+    color: white;
+    padding: 10px 14px;
+    border: 0;
+    border-radius: 8px;
+  }
+  .dash-btn-icon {
+    font-size: 20px;
+    color: white;
+  }
+}
+@media (min-width: 800px) and (max-width: 900px) {
+  .dash-panel-1 {
+    padding: 1em;
+    gap: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .dash-block {
+    padding: 1em;
+    background-color: white;
+    border-radius: 14px;
+  }
+  .dash-block h1 {
+    font-size: 24px;
+    letter-spacing: -1px;
+  }
+  .dash-block button {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    background-color: #117dfa;
+    color: white;
+    padding: 10px 14px;
+    border: 0;
+    border-radius: 8px;
+  }
+  .dash-btn-icon {
+    font-size: 20px;
+    color: white;
+  }
+}
+@media (min-width: 900px) and (max-width: 1000px) {
+  .dash-panel-1 {
+    padding: 1em;
+    gap: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .dash-block {
+    padding: 1em;
+    background-color: white;
+    border-radius: 14px;
+  }
+  .dash-block h1 {
+    font-size: 24px;
+    letter-spacing: -1px;
+  }
+  .dash-block button {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    background-color: #117dfa;
+    color: white;
+    padding: 10px 14px;
+    border: 0;
+    border-radius: 8px;
+  }
+  .dash-btn-icon {
+    font-size: 20px;
+    color: white;
+  }
+}
+@media (min-width: 1000px) {
+  .dash-panel-1 {
+    padding: 1em;
+    gap: 15px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
+  .dash-block {
+    padding: 1em;
+    background-color: white;
+    border-radius: 14px;
+  }
+  .dash-block h1 {
+    font-size: 24px;
+    letter-spacing: -1px;
+  }
+  .dash-block button {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    background-color: #117dfa;
+    color: white;
+    padding: 10px 14px;
+    border: 0;
+    border-radius: 8px;
+  }
+  .dash-btn-icon {
+    font-size: 20px;
+    color: white;
+  }
+}
+
+/* SCHOOLS */
+@media (max-width: 500px) {
+  .dash-school {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .dash-school-name {
+    font-weight: 600;
+  }
+  .dash-school-city {
+    font-size: 12px;
+  }
+  .dash-school-icon {
+    font-size: 22px;
+    color: black;
+  }
+
+}
+@media (min-width: 500px) {
+  .dash-school {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .dash-school-name {
+    font-weight: 600;
+  }
+  .dash-school-city {
+    font-size: 12px;
+  }
+  .dash-school-icon {
+    font-size: 22px;
+    color: black;
+  }
+
+}

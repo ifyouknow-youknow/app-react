@@ -1,0 +1,20 @@
+.loading {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* From https://css.glass */
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  z-index: 10000;
+}
+.loading h1 {
+  font-size: 20px;
+  text-align: center;
+  color: white;
+}

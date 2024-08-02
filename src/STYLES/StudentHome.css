@@ -1,0 +1,226 @@
+@media (max-width: 500px) {
+  .home-panel-2 {
+    padding: 1em;
+  }
+  .home-panel-2 h1 {
+    font-weight: 500;
+    font-size: 34px;
+    line-height: 1em;
+  }
+  .home-panel-2-blocks {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .home-panel-2-block {
+    background-color: #ebf0f3;
+    border-radius: 10px;
+  }
+  .home-panel-2-block h3 {
+    font-weight: 500;
+    font-size: 24px;
+  }
+  .home-panel-2-icon {
+    font-size: 22px;
+  }
+  .home-panel-2-block p {
+    font-weight: 300;
+    padding: 10px 0;
+    font-size: 16px;
+  }
+}
+@media (min-width: 500px) and (max-width: 600px) {
+  .home-panel-2 {
+    padding: 1em;
+  }
+  .home-panel-2 h1 {
+    font-weight: 500;
+    font-size: 34px;
+    line-height: 1em;
+  }
+  .home-panel-2-blocks {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .home-panel-2-block {
+    background-color: #ebf0f3;
+    border-radius: 10px;
+  }
+  .home-panel-2-block h3 {
+    font-weight: 500;
+    font-size: 24px;
+  }
+  .home-panel-2-icon {
+    font-size: 22px;
+  }
+  .home-panel-2-block p {
+    font-weight: 300;
+    padding: 10px 0;
+    font-size: 16px;
+  }
+}
+@media (min-width: 600px) and (max-width: 700px) {
+  .home-panel-2 {
+    padding: 1em;
+  }
+  .home-panel-2 h1 {
+    font-weight: 500;
+    font-size: 34px;
+    line-height: 1em;
+    padding: 1em;
+  }
+  .home-panel-2-blocks {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .home-panel-2-block {
+    background-color: #ebf0f3;
+    border-radius: 10px;
+  }
+  .home-panel-2-block h3 {
+    font-weight: 500;
+    font-size: 24px;
+  }
+  .home-panel-2-icon {
+    font-size: 22px;
+  }
+  .home-panel-2-block p {
+    font-weight: 300;
+    padding: 10px 0;
+    font-size: 16px;
+  }
+}
+@media (min-width: 700px) and (max-width: 800px) {
+  .home-panel-2 {
+    padding: 1em;
+  }
+  .home-panel-2 h1 {
+    font-weight: 500;
+    font-size: 34px;
+    line-height: 1em;
+    padding: 1em;
+    text-align: center;
+  }
+  .home-panel-2-blocks {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .home-panel-2-block {
+    background-color: #ebf0f3;
+    border-radius: 10px;
+  }
+  .home-panel-2-block h3 {
+    font-weight: 500;
+    font-size: 24px;
+  }
+  .home-panel-2-icon {
+    font-size: 22px;
+  }
+  .home-panel-2-block p {
+    font-weight: 300;
+    padding: 10px 0;
+    font-size: 16px;
+  }
+}
+@media (min-width: 800px) and (max-width: 900px) {
+  .home-panel-2 {
+    padding: 1em;
+  }
+  .home-panel-2 h1 {
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 1em;
+    padding: 1em;
+    text-align: center;
+  }
+  .home-panel-2-blocks {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  .home-panel-2-block {
+    background-color: #ebf0f3;
+    border-radius: 10px;
+  }
+  .home-panel-2-block h3 {
+    font-weight: 500;
+    font-size: 24px;
+  }
+  .home-panel-2-icon {
+    font-size: 22px;
+  }
+  .home-panel-2-block p {
+    font-weight: 300;
+    padding: 10px 0;
+    font-size: 16px;
+  }
+}
+@media (min-width: 1000px) {
+  .home-panel-2 {
+    padding: 1em;
+  }
+  .home-panel-2 h1 {
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 1em;
+    padding: 1em;
+    text-align: center;
+  }
+  .home-panel-2-blocks {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  .home-panel-2-block {
+    background-color: #ebf0f3;
+    border-radius: 10px;
+  }
+  .home-panel-2-block h3 {
+    font-weight: 500;
+    font-size: 24px;
+  }
+  .home-panel-2-icon {
+    font-size: 24px;
+  }
+  .home-panel-2-block p {
+    font-weight: 300;
+    padding: 10px 0;
+    font-size: 18px;
+  }
+}
+@media (min-width: 900px) and (max-width: 1000px) {
+  .home-panel-2 {
+    padding: 1em;
+  }
+  .home-panel-2 h1 {
+    font-weight: 500;
+    font-size: 40 px;
+    line-height: 1em;
+    padding: 1em;
+    text-align: center;
+  }
+  .home-panel-2-blocks {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  .home-panel-2-block {
+    background-color: #ebf0f3;
+    border-radius: 10px;
+  }
+  .home-panel-2-block h3 {
+    font-weight: 500;
+    font-size: 24px;
+  }
+  .home-panel-2-icon {
+    font-size: 22px;
+  }
+  .home-panel-2-block p {
+    font-weight: 300;
+    padding: 10px 0;
+    font-size: 16px;
+  }
+}

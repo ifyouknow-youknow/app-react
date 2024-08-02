@@ -1,0 +1,42 @@
+@media (max-width: 500px) {
+  .ipg-school-wrap {
+    background-color: white;
+  }
+  .ipg-school-title {
+    font-size: 28px;
+    padding: 15px;
+  }
+  .ipg-school-block {
+    padding: 18px;
+    background-color: #eff1f7;
+    width: fit-content;
+    margin: 10px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 14px;
+  }
+}
+@media (min-width: 500px) {
+  .ipg-school-wrap {
+    background-color: white;
+  }
+  .ipg-school-title {
+    font-size: 28px;
+    padding: 15px;
+  }
+  .ipg-school-block {
+    padding: 18px;
+    background-color: #eff1f7;
+    width: fit-content;
+    margin: 10px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 14px;
+  }
+}

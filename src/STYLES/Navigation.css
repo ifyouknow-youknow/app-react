@@ -1,0 +1,478 @@
+@media (max-width: 500px) {
+  .nav {
+    padding: 1em;
+    width: 100vw;
+    box-sizing: border-box;
+  }
+  .nav-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .logo {
+    width: 80px;
+    height: 80px;
+  }
+  .logo-img {
+    width: 100%;
+    height: 100%;
+  }
+  .nav-links {
+    display: none;
+  }
+  .burger {
+    height: fit-content;
+  }
+  .burger-icon {
+    font-size: 35px;
+  }
+  .nav-body {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: white;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .nav-body-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .nav-body-logo {
+    width: 140px;
+    height: 140px;
+  }
+  .nav-body-logo img {
+    width: 100%;
+    height: 100%;
+  }
+  .nav-body-close {
+    height: fit-content;
+  }
+  .nav-body-close-icon {
+    font-size: 45px;
+  }
+  .nav-body-middle {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .nav-body-link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+  .nav-body-link p {
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: -1px;
+  }
+  .nav-body-link-icon {
+    font-size: 35px;
+  }
+  .nav-body-bottom p {
+    font-size: 13px;
+    color: #232528;
+  }
+}
+@media (min-width: 500px) and (max-width: 600px) {
+  .nav {
+    padding: 1em;
+    width: 100vw;
+    box-sizing: border-box;
+  }
+  .nav-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .logo {
+    width: 80px;
+    height: 80px;
+  }
+  .logo-img {
+    width: 100%;
+    height: 100%;
+  }
+  .nav-links {
+    display: none;
+  }
+  .burger {
+    height: fit-content;
+  }
+  .burger-icon {
+    font-size: 35px;
+  }
+  .nav-body {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: white;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .nav-body-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .nav-body-logo {
+    width: 140px;
+    height: 140px;
+  }
+  .nav-body-logo img {
+    width: 100%;
+    height: 100%;
+  }
+  .nav-body-close {
+    height: fit-content;
+  }
+  .nav-body-close-icon {
+    font-size: 45px;
+  }
+  .nav-body-middle {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .nav-body-link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+  .nav-body-link p {
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: -1px;
+  }
+  .nav-body-link-icon {
+    font-size: 35px;
+  }
+  .nav-body-bottom p {
+    font-size: 13px;
+    color: #232528;
+  }
+}
+@media (min-width: 600px) and (max-width: 700px) {
+  .nav {
+    padding: 1em;
+    width: 100vw;
+    box-sizing: border-box;
+  }
+  .nav-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .logo {
+    width: 80px;
+    height: 80px;
+  }
+  .logo-img {
+    width: 100%;
+    height: 100%;
+  }
+  .nav-links {
+    display: none;
+  }
+  .burger {
+    height: fit-content;
+  }
+  .burger-icon {
+    font-size: 35px;
+  }
+  .nav-body {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: white;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .nav-body-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .nav-body-logo {
+    width: 140px;
+    height: 140px;
+  }
+  .nav-body-logo img {
+    width: 100%;
+    height: 100%;
+  }
+  .nav-body-close {
+    height: fit-content;
+  }
+  .nav-body-close-icon {
+    font-size: 45px;
+  }
+  .nav-body-middle {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .nav-body-link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+  .nav-body-link p {
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: -1px;
+  }
+  .nav-body-link-icon {
+    font-size: 35px;
+  }
+  .nav-body-bottom p {
+    font-size: 13px;
+    color: #232528;
+  }
+}
+@media (min-width: 700px) and (max-width: 800px) {
+  .nav {
+    padding: 1em;
+    width: 100vw;
+    box-sizing: border-box;
+  }
+  .nav-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .logo {
+    width: 80px;
+    height: 80px;
+  }
+  .logo-img {
+    width: 100%;
+    height: 100%;
+  }
+  .nav-links {
+    display: none;
+  }
+  .burger {
+    height: fit-content;
+  }
+  .burger-icon {
+    font-size: 35px;
+  }
+  .nav-body {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: white;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .nav-body-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .nav-body-logo {
+    width: 140px;
+    height: 140px;
+  }
+  .nav-body-logo img {
+    width: 100%;
+    height: 100%;
+  }
+  .nav-body-close {
+    height: fit-content;
+  }
+  .nav-body-close-icon {
+    font-size: 45px;
+  }
+  .nav-body-middle {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .nav-body-link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+  .nav-body-link p {
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: -1px;
+  }
+  .nav-body-link-icon {
+    font-size: 35px;
+  }
+  .nav-body-bottom p {
+    font-size: 13px;
+    color: #232528;
+  }
+}
+@media (min-width: 800px) and (max-width: 900px) {
+  .nav {
+    padding: 1em;
+    width: 100vw;
+    box-sizing: border-box;
+  }
+  .nav-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .logo {
+    width: 80px;
+    height: 80px;
+  }
+  .logo-img {
+    width: 100%;
+    height: 100%;
+  }
+  .burger {
+    display: none;
+  }
+  .nav-body-bottom p {
+    font-size: 13px;
+    color: #232528;
+  }
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+  }
+  .nav-link p {
+    font-weight: 600;
+    font-size: 18px;
+  }
+  .login {
+    background-color: #232528;
+    padding: 10px 20px;
+    border-radius: 100px;
+    color: white;
+  }
+  .signup {
+    background-color: #18335d;
+    padding: 10px 20px;
+    border-radius: 100px;
+    color: white;
+  }
+}
+@media (min-width: 900px) and (max-width: 1000px) {
+  .nav {
+    padding: 1em;
+    width: 100vw;
+    box-sizing: border-box;
+  }
+  .nav-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .logo {
+    width: 80px;
+    height: 80px;
+  }
+  .logo-img {
+    width: 100%;
+    height: 100%;
+  }
+  .burger {
+    display: none;
+  }
+  .nav-body-bottom p {
+    font-size: 13px;
+    color: #232528;
+  }
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+  }
+  .nav-link p {
+    font-weight: 600;
+    font-size: 18px;
+  }
+  .login {
+    background-color: #232528;
+    padding: 10px 20px;
+    border-radius: 100px;
+    color: white;
+  }
+  .signup {
+    background-color: #18335d;
+    padding: 10px 20px;
+    border-radius: 100px;
+    color: white;
+  }
+}
+@media (min-width: 1000px) {
+  .nav {
+    padding: 1em;
+    box-sizing: border-box;
+  }
+  .nav-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .logo {
+    width: 80px;
+    height: 80px;
+  }
+  .logo-img {
+    width: 100%;
+    height: 100%;
+  }
+  .burger {
+    display: none;
+  }
+  .nav-body-bottom p {
+    font-size: 13px;
+    color: #232528;
+  }
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+  }
+  .nav-link p {
+    font-weight: 600;
+    font-size: 16px;
+  }
+  .login {
+    background-color: #232528;
+    padding: 10px 20px;
+    border-radius: 100px;
+    color: white;
+  }
+  .signup {
+    background-color: #18335d;
+    padding: 10px 20px;
+    border-radius: 100px;
+    color: white;
+  }
+}

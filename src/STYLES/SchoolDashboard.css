@@ -1,0 +1,33 @@
+@media (max-width: 500px) {
+  .school-dash-title {
+    font-size: 25px;
+    font-weight: 500;
+    letter-spacing: -1px;
+  }
+  .student-plan {
+    background-color: white;
+    max-width: 100vw;
+    height: 100%;
+    box-sizing: border-box;
+    overflow-y: scroll;
+    overflow-x: scroll;
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+
+    /* For other browsers */
+    &::-webkit-scrollbar {
+      display: none; /* Safari and Chrome */
+    }
+  }
+  .school-dash-btn {
+    background-color: #117DFA;
+    padding: 10px;
+    border-radius: 100px;
+    cursor: pointer;
+  }
+  .school-dash-icon {
+    font-size: 22px;
+    vertical-align: middle;
+    color: white;
+  }
+}

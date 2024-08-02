@@ -1,0 +1,423 @@
+@media (max-width: 500px) {
+  .student-dash-panel-1 {
+    /* padding: 0 1em; */
+    background-color: white;
+    border-radius: 10px;
+  }
+  .student-dash-block {
+    padding: 1em;
+    border-radius: 10px;
+  }
+  .student-dash-block h1 {
+    font-size: 22px;
+    font-weight: 600;
+  }
+  .student-dash-block-caption {
+    font-size: 12px;
+    font-weight: 400;
+    color: #969696;
+  }
+  .student-dash-courses {
+    background-color: white;
+    overflow-x: scroll;
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+  }
+  .student-dash-courses::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+  }
+
+  .student-dash-course {
+    padding: 10px;
+    width: fit-content;
+    border-radius: 10px;
+  }
+  .student-dash-course img {
+    height: 300px;
+    object-fit: cover;
+  }
+  .student-dash-course-bottom {
+    padding: 6px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .student-dash-course-bottom h3 {
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .student-dash-course-bottom p {
+    font-size: 13px;
+    font-weight: 400;
+  }
+  .student-dash-start-btn {
+    background-color: black;
+    color: white;
+    width: fit-content;
+    padding: 10px 20px;
+    border-radius: 100px;
+    font-size: 14px;
+  }
+}
+@media (min-width: 500px) and (max-width: 600px) {
+  .student-dash-panel-1 {
+    /* padding: 0 1em; */
+    background-color: white;
+    border-radius: 10px;
+  }
+  .student-dash-block {
+    padding: 1em;
+    border-radius: 10px;
+  }
+  .student-dash-block h1 {
+    font-size: 22px;
+    font-weight: 600;
+  }
+  .student-dash-block-caption {
+    font-size: 12px;
+    font-weight: 400;
+    color: #969696;
+  }
+  .student-dash-courses {
+    background-color: white;
+    overflow-x: scroll;
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+  }
+  .student-dash-courses::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+  }
+
+  .student-dash-course {
+    padding: 10px;
+    width: fit-content;
+    border-radius: 10px;
+  }
+  .student-dash-course img {
+    height: 290px;
+  }
+  .student-dash-course-bottom {
+    padding: 6px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .student-dash-course-bottom h3 {
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .student-dash-course-bottom p {
+    font-size: 13px;
+    font-weight: 400;
+  }
+  .student-dash-start-btn {
+    background-color: black;
+    color: white;
+    width: fit-content;
+    padding: 10px 20px;
+    border-radius: 100px;
+    font-size: 14px;
+  }
+}
+@media (min-width: 600px) and (max-width: 700px) {
+  .student-dash-panel-1 {
+    /* padding: 0 1em; */
+    background-color: white;
+    border-radius: 10px;
+  }
+  .student-dash-block {
+    padding: 1em;
+    border-radius: 10px;
+  }
+  .student-dash-block h1 {
+    font-size: 22px;
+    font-weight: 600;
+  }
+  .student-dash-block-caption {
+    font-size: 12px;
+    font-weight: 400;
+    color: #969696;
+  }
+  .student-dash-courses {
+    background-color: white;
+    overflow-x: scroll;
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+  }
+  .student-dash-courses::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+  }
+
+  .student-dash-course {
+    padding: 10px;
+    width: fit-content;
+    border-radius: 10px;
+  }
+  .student-dash-course img {
+    height: 360px;
+  }
+  .student-dash-course-bottom {
+    padding: 6px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .student-dash-course-bottom h3 {
+    font-size: 17px;
+    font-weight: 600;
+  }
+  .student-dash-course-bottom p {
+    font-size: 14px;
+    font-weight: 400;
+  }
+  .student-dash-start-btn {
+    background-color: black;
+    color: white;
+    width: fit-content;
+    padding: 10px 20px;
+    border-radius: 100px;
+    font-size: 14px;
+  }
+}
+@media (min-width: 700px) and (max-width: 800px) {
+  .student-dash-panel-1 {
+    /* padding: 0 1em; */
+    background-color: white;
+    border-radius: 10px;
+  }
+  .student-dash-block {
+    padding: 1em;
+    border-radius: 10px;
+  }
+  .student-dash-block h1 {
+    font-size: 20px;
+    font-weight: 600;
+  }
+  .student-dash-block-caption {
+    font-size: 12px;
+    font-weight: 400;
+    color: #969696;
+  }
+  .student-dash-courses {
+    background-color: white;
+    overflow-x: scroll;
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+  }
+  .student-dash-courses::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+  }
+
+  .student-dash-course {
+    padding: 10px;
+    width: fit-content;
+    border-radius: 10px;
+  }
+  .student-dash-course img {
+    height: 400px;
+  }
+  .student-dash-course-bottom {
+    padding: 6px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .student-dash-course-bottom h3 {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .student-dash-course-bottom p {
+    font-size: 14px;
+    font-weight: 400;
+  }
+  .student-dash-start-btn {
+    background-color: black;
+    color: white;
+    width: fit-content;
+    padding: 10px 20px;
+    border-radius: 100px;
+    font-size: 14px;
+  }
+}
+@media (min-width: 800px) and (max-width: 900px) {
+  .student-dash-panel-1 {
+    /* padding: 0 1em; */
+    background-color: white;
+    border-radius: 10px;
+  }
+  .student-dash-block {
+    padding: 1em;
+    border-radius: 10px;
+  }
+  .student-dash-block h1 {
+    font-size: 20px;
+    font-weight: 600;
+  }
+  .student-dash-block-caption {
+    font-size: 12px;
+    font-weight: 400;
+    color: #969696;
+  }
+  .student-dash-courses {
+    background-color: white;
+    overflow-x: scroll;
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+  }
+  .student-dash-courses::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+  }
+
+  .student-dash-course {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+  .student-dash-course img {
+    height: 300px;
+  }
+  .student-dash-course-bottom {
+    padding: 6px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .student-dash-course-bottom h3 {
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .student-dash-course-bottom p {
+    font-size: 14px;
+    font-weight: 400;
+  }
+  .student-dash-start-btn {
+    background-color: black;
+    color: white;
+    width: fit-content;
+    padding: 10px 20px;
+    border-radius: 100px;
+    font-size: 14px;
+  }
+}
+@media (min-width: 900px) and (max-width: 1000px) {
+  .student-dash-panel-1 {
+    /* padding: 0 1em; */
+    background-color: white;
+    border-radius: 10px;
+  }
+  .student-dash-block {
+    padding: 1em;
+    border-radius: 10px;
+  }
+  .student-dash-block h1 {
+    font-size: 20px;
+    font-weight: 600;
+  }
+  .student-dash-block-caption {
+    font-size: 12px;
+    font-weight: 400;
+    color: #969696;
+  }
+  .student-dash-courses {
+    background-color: white;
+    overflow-x: scroll;
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+  }
+  .student-dash-courses::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+  }
+
+  .student-dash-course {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+  .student-dash-course img {
+    height: 300px;
+  }
+  .student-dash-course-bottom {
+    padding: 6px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .student-dash-course-bottom h3 {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .student-dash-course-bottom p {
+    font-size: 14px;
+    font-weight: 400;
+  }
+  .student-dash-start-btn {
+    background-color: black;
+    color: white;
+    width: fit-content;
+    padding: 10px 20px;
+    border-radius: 100px;
+    font-size: 14px;
+  }
+}
+@media (min-width: 1000px) {
+  .student-dash-panel-1 {
+    /* padding: 0 1em; */
+    background-color: white;
+    border-radius: 10px;
+  }
+  .student-dash-block {
+    padding: 1em;
+    border-radius: 10px;
+  }
+  .student-dash-block h1 {
+    font-size: 20px;
+    font-weight: 600;
+  }
+  .student-dash-block-caption {
+    font-size: 12px;
+    font-weight: 400;
+    color: #969696;
+  }
+  .student-dash-courses {
+    background-color: white;
+    overflow-x: scroll;
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+  }
+  .student-dash-courses::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+  }
+
+  .student-dash-course {
+    padding: 10px;display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+  .student-dash-course img {
+    height: 60vh;
+  }
+  .student-dash-course-bottom {
+    padding: 6px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .student-dash-course-bottom h3 {
+    font-size: 22px;
+    font-weight: 500;
+  }
+  .student-dash-course-bottom p {
+    font-size: 16px;
+    font-weight: 400;
+  }
+  .student-dash-start-btn {
+    background-color: black;
+    color: white;
+    width: fit-content;
+    padding: 10px 20px;
+    border-radius: 100px;
+    font-size: 14px;
+  }
+}

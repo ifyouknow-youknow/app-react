@@ -1,0 +1,69 @@
+@media (max-width: 500px) {
+  .student-lessons-top {
+    background-color: white;
+    margin: 0px 10px;
+    border-radius: 10px;
+  }
+  .student-lessons-top h1 {
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px;
+    border-bottom: 1px solid rgb(220, 220, 220);
+  }
+  .student-courses-wrap {
+    padding: 10px 14px;
+  }
+  .student-courses-wrap > div:not(:last-child) {
+    border-bottom: 1px solid #d4d4d4; /* Adjust the color and style as needed */
+  }
+  .student-lessons-wrap > div:not(:last-child) {
+    border-bottom: 1px solid #d4d4d4; /* Adjust the color and style as needed */
+  }
+  .student-course-name {
+    font-size: 18px;
+    padding: 16px 0px;
+    font-weight: 600;
+  }
+  .student-lesson-block {
+    background-color: #eff1f7;
+    padding: 6px 12px;
+  }
+  .student-lesson-name {
+    font-size: 14px;
+  }
+}
+@media (min-width: 500px) {
+  .student-lessons-top {
+    background-color: white;
+    margin: 0px 10px;
+    border-radius: 10px;
+  }
+  .student-lessons-top h1 {
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px;
+    border-bottom: 1px solid rgb(220, 220, 220);
+  }
+  .student-courses-wrap {
+    padding: 10px 14px;
+  }
+  .student-courses-wrap > div:not(:last-child) {
+    border-bottom: 1px solid #d4d4d4; /* Adjust the color and style as needed */
+  }
+  .student-lessons-wrap > div:not(:last-child) {
+    border-bottom: 1px solid #d4d4d4; /* Adjust the color and style as needed */
+  }
+  .student-course-name {
+    font-size: 18px;
+    padding: 16px 0px;
+    font-weight: 600;
+  }
+  .student-lesson-block {
+    background-color: #eff1f7;
+    padding: 6px 12px;
+  }
+  .student-lesson-name {
+    font-size: 14px;
+  }
+}
+
