@@ -1,12 +1,12 @@
 @media (max-width: 500px) {
-  .ipg-school-wrap {
+  .SDGA-school-wrap {
     background-color: white;
   }
-  .ipg-school-title {
+  .SDGA-school-title {
     font-size: 28px;
     padding: 15px;
   }
-  .ipg-school-block {
+  .SDGA-school-block {
     padding: 18px;
     background-color: #eff1f7;
     width: fit-content;
@@ -20,14 +20,14 @@
   }
 }
 @media (min-width: 500px) {
-  .ipg-school-wrap {
+  .SDGA-school-wrap {
     background-color: white;
   }
-  .ipg-school-title {
+  .SDGA-school-title {
     font-size: 28px;
     padding: 15px;
   }
-  .ipg-school-block {
+  .SDGA-school-block {
     padding: 18px;
     background-color: #eff1f7;
     width: fit-content;

@@ -32,7 +32,7 @@ export function NewSchool() {
       state !== ""
     ) {
       setLoading(true);
-      const temporaryPass = `IPG-${randomString(10)}`
+      const temporaryPass = `SDGA-${randomString(10)}`
       const imagePath = `Images/${randomString(12)}.jpg`;
 
       // 
@@ -62,7 +62,7 @@ export function NewSchool() {
                     setLoading(false);
                     if (thisTwo) {
                       alert("Success! School record was created.");
-                      navigate("/ipg/dashboard");
+                      navigate("/SDGA/dashboard");
                     }
                   });
                 }
@@ -76,7 +76,7 @@ export function NewSchool() {
                 setLoading(false);
                 if (thisTwo) {
                   alert("Success! School record was created.");
-                  navigate("/ipg/dashboard");
+                  navigate("/SDGA/dashboard");
                 }
               });
             }
@@ -105,7 +105,7 @@ export function NewSchool() {
       <div
         className="pointer"
         onClick={() => {
-          navigate("/ipg/dashboard");
+          navigate("/SDGA/dashboard");
         }}
       >
         <IoArrowBackSharp className="back-arrow" />

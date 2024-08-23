@@ -3,7 +3,7 @@ import {
   emailjs_publicKey,
   emailjs_serviceId,
   emailjs_templateId,
-  ipg_email,
+  SDGA_email,
   serverURL,
 } from "./Constants";
 import axios from "axios";
@@ -54,6 +54,14 @@ export function sortObjects(arr, property, direction = "asc") {
     }
     return 0;
   });
+}
+export function swapObjects(arr, index1, index2) {
+  if (index1 !== index2 && index1 >= 0 && index1 < arr.length && index2 >= 0 && index2 < arr.length) {
+    const temp = arr[index1];
+    arr[index1] = arr[index2];
+    arr[index2] = temp;
+  }
+  return arr;
 }
 //
 export function formatDate(date) {
@@ -122,7 +130,7 @@ export async function emailjs_SendEmail(toEmail, subject, message, success) {
         toEmail: toEmail,
         fromName: "Pet Grooming Edu",
         subject: subject,
-        fromEmail: ipg_email,
+        fromEmail: SDGA_email,
         message: message,
       },
       emailjs_publicKey

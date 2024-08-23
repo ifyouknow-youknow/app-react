@@ -1,4 +1,4 @@
-export const ipg_email = "bagel.inbox@gmail.com";
+export const SDGA_email = "bagel.inbox@gmail.com";
 
 export const serverURL = "https://buttered-candied-pipe.glitch.me";
 export const cocoURL = "https://clover-super-mulberry.glitch.me";

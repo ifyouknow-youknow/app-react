@@ -49,7 +49,7 @@ export function SchoolCourses() {
           <div className="school-courses-notice-2">
             <div>
               <h1 className="no">
-                Save time and unlock the state approved IPG Pet Grooming
+                Save time and unlock the state approved SDGA Pet Grooming
                 Curriculum Course.
               </h1>
               <br />

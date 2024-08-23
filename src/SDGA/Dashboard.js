@@ -34,7 +34,7 @@ export function Dashboard() {
             <button
               className="pointer"
               onClick={() => {
-                navigate("/ipg/new-school");
+                navigate("/SDGA/new-school");
               }}
             >
               <AiOutlinePlus className="dash-btn-icon" />
@@ -46,7 +46,7 @@ export function Dashboard() {
             {schools.map((school, s) => {
               return (
                 <div key={s} className="dash-school hover pointer padding_v" onClick={() => {
-                navigate(`/ipg/school/${school.id}`)
+                navigate(`/SDGA/school/${school.id}`)
                 }}>
                   <div className="side-by">
                     <AsyncImage

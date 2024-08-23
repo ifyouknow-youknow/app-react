@@ -23,7 +23,7 @@ export default function Navigation() {
         <div className="right">
             <div className="nav-links">
                 <div className="nav-link pointer" onClick={() => {
-                    navigate("/ipg/articles")
+                    navigate("/SDGA/articles")
                 }}>
                     <p className="no">Articles</p>
                 </div>
@@ -33,7 +33,7 @@ export default function Navigation() {
                     <p className="no">Contact</p>
                 </div>
                 <div className="nav-link login pointer" onClick={() => {
-                    navigate("/ipg/login")
+                    navigate("/SDGA/login")
                 }}>
                     <p className="no">Log In</p>
                 </div>
@@ -73,14 +73,14 @@ export default function Navigation() {
           <div className="nav-body-middle">
             <div className="nav-body-link" onClick={() => {
                 setToggleNavBody(false)
-                navigate("/ipg")
+                navigate("/SDGA")
             }}>
               <p className="no">Home</p>
               <MdArrowOutward className="nav-body-link-icon" />
             </div>
             <div className="nav-body-link" onClick={() => {
                 setToggleNavBody(false)
-                navigate("/ipg/articles")
+                navigate("/SDGA/articles")
             }}>
               <p className="no">Articles</p>
               <MdArrowOutward className="nav-body-link-icon" />
@@ -94,7 +94,7 @@ export default function Navigation() {
             </div>
             <div className="nav-body-link login" onClick={() => {
                 setToggleNavBody(false)
-                navigate("/ipg/login")
+                navigate("/SDGA/login")
             }}>
               <p className="no">Login</p>
               <MdArrowOutward className="nav-body-link-icon" />

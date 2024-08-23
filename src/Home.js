@@ -14,7 +14,7 @@ export function Home() {
       <Navigation />
       <div className="home-panel-1">
         <div className="home-panel-1-left">
-          <h3 className="no green">IPG Portal</h3>
+          <h3 className="no green">SDGA Portal</h3>
           <h1 className="no">
             Pet
             <br />

@@ -12,7 +12,7 @@ export default function SchoolFooter() {
           <br />
           <p className="no">
             The care and safety of the pets we work with is our passion, and
-            helping groomers thrive is our dream. At IPG, we support a diverse
+            helping groomers thrive is our dream. At SDGA, we support a diverse
             network of grooming schools, each with its unique name but united by
             a single mission: to teach driven individuals the art and skill of
             pet grooming. Our platform enables these schools to efficiently
@@ -46,7 +46,7 @@ export default function SchoolFooter() {
           <div
             className="footer-link pointer underline"
             onClick={() => {
-              navigate("/ipg/articles");
+              navigate("/SDGA/articles");
             }}
           >
             <p className="no">Articles</p>
@@ -74,10 +74,10 @@ export default function SchoolFooter() {
           <div
             className="footer-link pointer underline"
             onClick={() => {
-              navigate("/ipg");
+              navigate("/SDGA");
             }}
           >
-            <p className="no">IPG Inc.</p>
+            <p className="no">SDGA Inc.</p>
           </div>
           <div
             className="footer-link pointer underline"

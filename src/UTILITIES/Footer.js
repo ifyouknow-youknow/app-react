@@ -8,18 +8,10 @@ export default function Footer() {
     <div className="footer">
       <div className="footer-wrap">
         <div className="footer-1">
-          <h3 className="no">IPG Portal</h3>
+          <h3 className="no">SDGA Portal</h3>
           <br />
           <p className="no">
-            The care and safety of the pets we work with is our passion, and
-            helping groomers thrive is our dream. At IPG, we offer certification
-            for groomers by groomers, allowing you to certify in the comfort of
-            your own salon. Start your journey today and become part of the
-            largest Groomers Association, with members in 35 countries. IPG
-            educates and certifies groomers to ensure the safety of the pets in
-            our care while enhancing and acknowledging our groomers' skills to
-            elevate the grooming profession. Join the growing community of
-            IPG-certified groomers in 35 countries and counting!
+            San Diego Grooming Academy, founded in 2016 by Myke Ross, builds on a rich history of multi-platform entrepreneurship and a deep passion for animal care. With a focus on professional pet grooming, the academy offers a safe learning environment, combining curriculum-based lectures with hands-on training. It also supports ongoing industry development through workshops and community events. Myke’s drive for knowledge fuels his success, and he finds joy in helping others achieve their goals.
           </p>
         </div>
         <div className="footer-2">
@@ -36,7 +28,7 @@ export default function Footer() {
           <div
             className="footer-link pointer underline"
             onClick={() => {
-              navigate("/ipg/articles");
+              navigate("/SDGA/articles");
             }}
           >
             <p className="no">Articles</p>
@@ -52,7 +44,7 @@ export default function Footer() {
           <div
             className="footer-link pointer underline"
             onClick={() => {
-              navigate("/ipg/login");
+              navigate("/SDGA/login");
             }}
           >
             <p className="no">Log In</p>
@@ -64,10 +56,10 @@ export default function Footer() {
           <div
             className="footer-link pointer underline"
             onClick={() => {
-              navigate("/ipg")
+              navigate("/SDGA")
             }}
           >
-            <p className="no">IPG Inc.</p>
+            <p className="no">SDGA</p>
           </div>
           <div
             className="footer-link pointer underline"
@@ -90,7 +82,7 @@ export default function Footer() {
       {/*  */}
       <div className="footer-copy">
         <p className="no">
-          &copy; Copyright International Professional Groomers Inc. 2024 All
+          &copy; Copyright San Diego Grooming Academy. 2024 All
           Rights Reserved.
         </p>
       </div>

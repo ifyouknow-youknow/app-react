@@ -12,6 +12,7 @@ import {
   removeDuplicatesByProperty,
   scrollToAnchor,
   sortObjects,
+  swapObjects,
 } from "../Functions";
 import {
   firebase_CreateDocument,
@@ -1356,106 +1357,122 @@ export function CourseEditor() {
       }
     }
   }
-  function onMoveSlideUp(slide) {
-    const newOrder = slide.Order - 1;
-    if (slide.Order > 1) {
-      setLoading(true);
-      // FIND THE ONE WITH A SMALLER ORDER
-      firebase_GetAllDocumentsQueried(
-        "Slides",
-        [
-          { field: "LessonId", operator: "==", value: chosenLesson.id },
-          { field: "Order", operator: "==", value: newOrder },
-        ],
-        (smallerOne) => {
-          const nextSlide = smallerOne[0];
-          firebase_UpdateDocument(
-            "Slides",
-            nextSlide.id,
-            { Order: slide.Order },
-            (success) => {
-              if (success) {
-                firebase_UpdateDocument(
-                  "Slides",
-                  slide.id,
-                  { Order: newOrder },
-                  (successTwo) => {
-                    if (successTwo) {
-                      setLoading(false);
-                      setChosenSlides((prev) =>
-                        prev.map((ting) =>
-                          ting.id === slide.id
-                            ? { ...slide, Order: newOrder }
-                            : ting
-                        )
-                      );
-                      setChosenSlides((prev) =>
-                        prev.map((ting) =>
-                          ting.id === nextSlide.id
-                            ? { ...nextSlide, Order: slide.Order }
-                            : ting
-                        )
-                      );
-                    }
-                  }
-                );
-              }
-            }
-          );
-        }
-      );
+  // MOVE
+  async function onSaveLessonOrder() {
+    setLoading(true)
+    var newOrderArr = [];
+    for (var i = 0; i < chosenSlides.length; i++) {
+      const order = parseInt(document.querySelector(`#tbOrder${i}`).value);
+      const obj = {
+        slide: chosenSlides[i],
+        order: order
+      }
+      newOrderArr.push(obj)
     }
-  }
-  function onMoveSlideDown(slide) {
-    const newOrder = slide.Order + 1;
-    if (slide.Order < chosenSlides.length) {
-      setLoading(true);
-      // FIND THE ONE WITH A LARGER ORDER
-      firebase_GetAllDocumentsQueried(
-        "Slides",
-        [
-          { field: "LessonId", operator: "==", value: chosenLesson.id },
-          { field: "Order", operator: "==", value: newOrder },
-        ],
-        (largerOne) => {
-          const nextSlide = largerOne[0];
-          firebase_UpdateDocument(
-            "Slides",
-            nextSlide.id,
-            { Order: slide.Order },
-            (success) => {
-              if (success) {
-                firebase_UpdateDocument(
-                  "Slides",
-                  slide.id,
-                  { Order: newOrder },
-                  (successTwo) => {
-                    if (successTwo) {
-                      setLoading(false);
-                      setChosenSlides((prev) =>
-                        prev.map((ting) =>
-                          ting.id === slide.id
-                            ? { ...slide, Order: newOrder }
-                            : ting
-                        )
-                      );
-                      setChosenSlides((prev) =>
-                        prev.map((ting) =>
-                          ting.id === nextSlide.id
-                            ? { ...nextSlide, Order: slide.Order }
-                            : ting
-                        )
-                      );
-                    }
-                  }
-                );
-              }
-            }
-          );
+    const sortedArr = sortObjects(newOrderArr, 'order', "asc");
+    const tempArr = [];
+    for (var i = 0; i < sortedArr.length; i++) {
+      const obj = sortedArr[i].slide;
+      await firebase_UpdateDocument('Slides', obj.id, { Order: i + 1 }, (success) => {
+        if (success) {
+          console.log(i + 1)
         }
-      );
+      })
+      document.querySelector(`#tbOrder${i}`).value = i + 1;
+      tempArr.push(obj);
     }
+    await firebase_GetAllDocumentsQueried(
+      "Slides",
+      [
+        {
+          field: "LessonId",
+          operator: "==",
+          value: chosenLesson.id,
+        },
+      ],
+      (slides) => {
+        setChosenSlides(slides);
+      }
+    );
+    setLoading(false)
   }
+  async function onSavePromptOrder() {
+    setLoading(true)
+    var newOrderArr = [];
+    for (var i = 0; i < chosenSlides.length; i++) {
+      const order = parseInt(document.querySelector(`#tbOrder${i}`).value);
+      const obj = {
+        slide: chosenSlides[i],
+        order: order
+      }
+      newOrderArr.push(obj)
+    }
+    const sortedArr = sortObjects(newOrderArr, 'order', "asc");
+    const tempArr = [];
+    for (var i = 0; i < sortedArr.length; i++) {
+      const obj = sortedArr[i].slide;
+      await firebase_UpdateDocument('Slides', obj.id, { Order: i + 1 }, (success) => {
+        if (success) {
+          console.log(i + 1)
+        }
+      })
+      document.querySelector(`#tbOrder${i}`).value = i + 1;
+      tempArr.push(obj);
+    }
+    await firebase_GetAllDocumentsQueried(
+      "Slides",
+      [
+        {
+          field: "LessonId",
+          operator: "==",
+          value: chosenLesson.id,
+        },
+      ],
+      (slides) => {
+        setChosenSlides(slides);
+      }
+    );
+    setLoading(false)
+  }
+  async function onSaveQuestionOrder() {
+    setLoading(true)
+    var newOrderArr = [];
+    for (var i = 0; i < chosenSlides.length; i++) {
+      const order = parseInt(document.querySelector(`#tbOrder${i}`).value);
+      const obj = {
+        slide: chosenSlides[i],
+        order: order
+      }
+      newOrderArr.push(obj)
+    }
+    const sortedArr = sortObjects(newOrderArr, 'order', "asc");
+    const tempArr = [];
+    for (var i = 0; i < sortedArr.length; i++) {
+      const obj = sortedArr[i].slide;
+      await firebase_UpdateDocument('Slides', obj.id, { Order: i + 1 }, (success) => {
+        if (success) {
+          console.log(i + 1)
+        }
+      })
+      document.querySelector(`#tbOrder${i}`).value = i + 1;
+      tempArr.push(obj);
+    }
+    await firebase_GetAllDocumentsQueried(
+      "Slides",
+      [
+        {
+          field: "LessonId",
+          operator: "==",
+          value: chosenLesson.id,
+        },
+      ],
+      (slides) => {
+        setChosenSlides(slides);
+      }
+    );
+    setLoading(false)
+  }
+  // 
   function onMovePromptUp(slide) {
     const newOrder = slide.Order - 1;
     if (slide.Order > 1) {
@@ -2453,9 +2470,8 @@ export function CourseEditor() {
                       <div className="separate_h">
                         <div className="toggle-options">
                           <p
-                            className={`no toggle-option pointer ${
-                              toggleContent ? "chosen" : ""
-                            }`}
+                            className={`no toggle-option pointer ${toggleContent ? "chosen" : ""
+                              }`}
                             onClick={() => {
                               setToggleContent(true);
                             }}
@@ -2463,9 +2479,8 @@ export function CourseEditor() {
                             Image
                           </p>
                           <p
-                            className={`no toggle-option pointer ${
-                              toggleContent ? "" : "chosen"
-                            }`}
+                            className={`no toggle-option pointer ${toggleContent ? "" : "chosen"
+                              }`}
                             onClick={() => {
                               setToggleContent(false);
                             }}
@@ -2660,6 +2675,13 @@ export function CourseEditor() {
                       </div>
                       <div className="divider"></div>
                       {/* SLIDES */}
+                      <div className="separate_h">
+                        <div></div>
+                        <div className="padding_h">
+                          <PrimaryButton text={'Save Order'} onPress={() => { onSaveLessonOrder() }} classes={"fit-content"} />
+                        </div>
+                      </div>
+                      <br />
                       <div className="editor-slides">
                         {chosenSlides
                           .sort((a, b) => a.Order - b.Order)
@@ -2673,6 +2695,7 @@ export function CourseEditor() {
                                 <div
                                   className="editor-slide separate_h"
                                   onClick={() => {
+                                    console.log(slide.Order)
                                     setLoading(true);
                                     storage_DownloadMedia(
                                       slide.SlidePath,
@@ -2712,7 +2735,7 @@ export function CourseEditor() {
                                   {/*  */}
                                   <div className="side-by">
                                     {slide.SlidePath.split("/")[0] ===
-                                    "Images" ? (
+                                      "Images" ? (
                                       <MdPhotoSizeSelectActual
                                         color="#F27400"
                                         className="icon-icon"
@@ -2727,30 +2750,7 @@ export function CourseEditor() {
                                   </div>
                                 </div>
                                 <div className="padding-h">
-                                  <div
-                                    className="pointer"
-                                    onClick={() => {
-                                      onMoveSlideUp(slide);
-                                    }}
-                                  >
-                                    <IoChevronUpSharp
-                                      size={22}
-                                      color="#767D9C"
-                                      className="pointer"
-                                    />
-                                  </div>
-                                  <div
-                                    className="pointer"
-                                    onClick={() => {
-                                      onMoveSlideDown(slide);
-                                    }}
-                                  >
-                                    <IoChevronDownSharp
-                                      size={22}
-                                      className="pointer"
-                                      color="#767D9C"
-                                    />
-                                  </div>
+                                  <input id={`tbOrder${s}`} type="text" className="input-text" defaultValue={slide.Order} style={{ width: 50 }} />
                                 </div>
                               </div>
                             );
@@ -2938,6 +2938,14 @@ export function CourseEditor() {
                   </div>
                 )}
                 <div className="divider"></div>
+                <div className="separate_h">
+                  <div></div>
+                  <div className="padding_h">
+                    <PrimaryButton text={'Save Order'} onPress={() => { onSavePromptOrder() }} classes={"fit-content"} />
+                  </div>
+                </div>
+                <br />
+
                 {/* PROMPTS */}
                 <div className="editor-slides">
                   {chosenPrompts
@@ -2987,30 +2995,7 @@ export function CourseEditor() {
                             </div>
                           </div>
                           <div className="padding-h">
-                            <div
-                              className="pointer"
-                              onClick={() => {
-                                onMovePromptUp(prompt);
-                              }}
-                            >
-                              <IoChevronUpSharp
-                                size={22}
-                                color="#767D9C"
-                                className="pointer"
-                              />
-                            </div>
-                            <div
-                              className="pointer"
-                              onClick={() => {
-                                onMovePromptDown(prompt);
-                              }}
-                            >
-                              <IoChevronDownSharp
-                                size={22}
-                                className="pointer"
-                                color="#767D9C"
-                              />
-                            </div>
+                            <input id={`tbOrder${p}`} type="text" className="input-text" defaultValue={prompt.Order} style={{ width: 50 }} />
                           </div>
                         </div>
                       );
@@ -3079,9 +3064,8 @@ export function CourseEditor() {
                     <div className="separate_h">
                       <div className="toggle-options">
                         <p
-                          className={`no toggle-option pointer ${
-                            toggleContent ? "chosen" : ""
-                          }`}
+                          className={`no toggle-option pointer ${toggleContent ? "chosen" : ""
+                            }`}
                           onClick={() => {
                             setToggleContent(true);
                           }}
@@ -3089,9 +3073,8 @@ export function CourseEditor() {
                           Image
                         </p>
                         <p
-                          className={`no toggle-option pointer ${
-                            toggleContent ? "" : "chosen"
-                          }`}
+                          className={`no toggle-option pointer ${toggleContent ? "" : "chosen"
+                            }`}
                           onClick={() => {
                             setToggleContent(false);
                           }}
@@ -3291,9 +3274,8 @@ export function CourseEditor() {
                       <div className="editor-slide-details">
                         <div className="toggle-options">
                           <p
-                            className={`no toggle-option pointer ${
-                              questionType === "multiple" ? "chosen" : ""
-                            }`}
+                            className={`no toggle-option pointer ${questionType === "multiple" ? "chosen" : ""
+                              }`}
                             onClick={() => {
                               setQuestionType("multiple");
                             }}
@@ -3301,9 +3283,8 @@ export function CourseEditor() {
                             Multiple Choice
                           </p>
                           <p
-                            className={`no toggle-option pointer ${
-                              questionType === "short" ? "chosen" : ""
-                            }`}
+                            className={`no toggle-option pointer ${questionType === "short" ? "chosen" : ""
+                              }`}
                             onClick={() => {
                               setQuestionType("short");
                             }}
@@ -3311,9 +3292,8 @@ export function CourseEditor() {
                             Short Answer
                           </p>
                           <p
-                            className={`no toggle-option pointer ${
-                              questionType === "truefalse" ? "chosen" : ""
-                            }`}
+                            className={`no toggle-option pointer ${questionType === "truefalse" ? "chosen" : ""
+                              }`}
                             onClick={() => {
                               setQuestionType("truefalse");
                             }}
@@ -3572,6 +3552,13 @@ export function CourseEditor() {
                       </div>
                     </div>
                     <div className="divider"></div>
+                    <div className="separate_h">
+                      <div></div>
+                      <div className="padding_h">
+                        <PrimaryButton text={'Save Order'} onPress={() => { onSaveQuestionOrder() }} classes={"fit-content"} />
+                      </div>
+                    </div>
+                    <br />
                     {/* QUESTIONS */}
                     <div className="editor-slides">
                       {chosenQuestions
@@ -3726,30 +3713,7 @@ export function CourseEditor() {
                                 </div>
                               </div>
                               <div className="padding-h">
-                                <div
-                                  className="pointer"
-                                  onClick={() => {
-                                    onMoveQuestionUp(quest);
-                                  }}
-                                >
-                                  <IoChevronUpSharp
-                                    size={22}
-                                    color="#767D9C"
-                                    className="pointer"
-                                  />
-                                </div>
-                                <div
-                                  className="pointer"
-                                  onClick={() => {
-                                    onMoveQuestionDown(quest);
-                                  }}
-                                >
-                                  <IoChevronDownSharp
-                                    size={22}
-                                    className="pointer"
-                                    color="#767D9C"
-                                  />
-                                </div>
+                                <input id={`tbOrder${q}`} type="text" className="input-text" defaultValue={quest.Order} style={{ width: 50 }} />
                               </div>
                             </div>
                           );
@@ -3789,13 +3753,12 @@ export function CourseEditor() {
                       .map((comp, c) => {
                         return (
                           <div
-                            className={`editor-plan-block align-center separate_h ${
-                              comp.Type === "Lesson"
-                                ? "editor-bg-lesson"
-                                : comp.Type === "Homework"
+                            className={`editor-plan-block align-center separate_h ${comp.Type === "Lesson"
+                              ? "editor-bg-lesson"
+                              : comp.Type === "Homework"
                                 ? "editor-bg-homework"
                                 : "editor-bg-test"
-                            }`}
+                              }`}
                             key={c}
                           >
                             <p className="no">{comp.Name}</p>
@@ -3826,8 +3789,8 @@ export function CourseEditor() {
                                         item.id === newComp.id
                                           ? newComp
                                           : item.id === newNewComp.id
-                                          ? newNewComp
-                                          : item
+                                            ? newNewComp
+                                            : item
                                       )
                                     );
                                   }
@@ -3864,8 +3827,8 @@ export function CourseEditor() {
                                         item.id === newComp.id
                                           ? newComp
                                           : item.id === newNewComp.id
-                                          ? newNewComp
-                                          : item
+                                            ? newNewComp
+                                            : item
                                       )
                                     );
                                   }

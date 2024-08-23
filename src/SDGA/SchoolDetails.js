@@ -30,16 +30,16 @@ export function SchoolDetails() {
       <div
         className="pointer"
         onClick={() => {
-          navigate("/ipg/dashboard");
+          navigate("/SDGA/dashboard");
         }}
       >
         <IoArrowBackSharp className="back-arrow" />
       </div>
       <br />
-      <div className="ipg-school-wrap">
-        <h1 className="no ipg-school-title">{school && school.SchoolName}</h1>
+      <div className="SDGA-school-wrap">
+        <h1 className="no SDGA-school-title">{school && school.SchoolName}</h1>
         <br />
-        <div className="ipg-school-block gap">
+        <div className="SDGA-school-block gap">
           <div className="padding center">
             <AsyncImage
               imagePath={

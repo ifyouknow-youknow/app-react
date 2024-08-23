@@ -22,8 +22,8 @@ export function Login() {
         console.log(user);
         firebase_GetDocument("Users", user.uid, (person) => {
           console.log(person);
-          if (person.Role === "IPG") {
-            navigate("/ipg/dashboard");
+          if (person.Role === "SDGA") {
+            navigate("/SDGA/dashboard");
           } else {
             alert("This account is not authorized to use this portal.");
           }
@@ -42,7 +42,7 @@ export function Login() {
       <div className="login-main">
         <div></div>
         <div className="login-form">
-          <h3 className="green no text-center">IPG</h3>
+          <h3 className="green no text-center">SDGA</h3>
           <h1 className="no">Login</h1>
           <br />
           <input

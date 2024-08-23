@@ -284,7 +284,7 @@ export function SchoolStudents() {
       {
         amount: 20000,
         currency: "usd",
-        itemName: "IPG Professional Grooming Curriculum",
+        itemName: "SDGA Professional Grooming Curriculum",
         itemDescription:
           "A comprehensive pet grooming course for upcoming professionals.",
         studentId: chosenStudent.id,

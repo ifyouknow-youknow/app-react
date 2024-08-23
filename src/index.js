@@ -4,8 +4,8 @@ import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Home } from "./Home";
 import { Login } from "./Login";
-import { Dashboard } from "./IPG/Dashboard";
-import { NewSchool } from "./IPG/NewSchool";
+import { Dashboard } from "./SDGA/Dashboard";
+import { NewSchool } from "./SDGA/NewSchool";
 import { SchoolHome } from "./SCHOOLS/SchoolHome";
 import { SchoolLogin } from "./SCHOOLS/SchoolLogin";
 import { SchoolDashboard } from "./SCHOOLS/SchoolDashboard";
@@ -22,8 +22,9 @@ import { StudentTests } from "./STUDENTS/StudentTests";
 import { StudentTest } from "./STUDENTS/StudentTest";
 import { SchoolStudents } from "./SCHOOLS/SchoolStudents";
 import { StudentGrades } from "./STUDENTS/StudentGrades";
-import { SchoolDetails } from "./IPG/SchoolDetails";
+import { SchoolDetails } from "./SDGA/SchoolDetails";
 import { SignUp } from "./STUDENTS/SignUp";
+import { Contact } from "./SDGA/Contact";
 
 //
 const router = createBrowserRouter([
@@ -68,23 +69,27 @@ const router = createBrowserRouter([
     element: <StudentGrades />,
   },
   {
-    path: "/ipg",
+    path: "/SDGA",
     element: <Home />,
   },
   {
-    path: "/ipg/login",
+    path: "/contact",
+    element: <Contact />,
+  },
+  {
+    path: "/SDGA/login",
     element: <Login />,
   },
   {
-    path: "/ipg/dashboard",
+    path: "/SDGA/dashboard",
     element: <Dashboard />,
   },
   {
-    path: "/ipg/new-school",
+    path: "/SDGA/new-school",
     element: <NewSchool />,
   },
   {
-    path: "/ipg/school/:schoolId",
+    path: "/SDGA/school/:schoolId",
     element: <SchoolDetails />,
   },
   {

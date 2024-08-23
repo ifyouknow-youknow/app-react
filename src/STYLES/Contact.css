@@ -1,0 +1,53 @@
+@media (max-width: 500px) {
+    .contact-input {
+        width: 100%;
+        padding: 12px 12px;
+        box-sizing: border-box;
+        background-color: #F6F8FA;
+        border: 0;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        font-size: 14px;
+    }
+
+    .contact-drop {
+        padding: 12px;
+        background-color: #F6F8FA;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .contact-textarea {
+        height: 150px;
+        border: 0;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+}
+
+@media (min-width: 500px) {
+    .contact-input {
+        width: 100%;
+        padding: 12px 12px;
+        box-sizing: border-box;
+        background-color: #F6F8FA;
+        border: 0;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        font-size: 14px;
+    }
+
+    .contact-drop {
+        padding: 12px;
+        background-color: #F6F8FA;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .contact-textarea {
+        height: 150px;
+        border: 0;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+}
