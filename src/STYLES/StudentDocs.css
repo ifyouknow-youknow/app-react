@@ -1,0 +1,45 @@
+@media (max-width: 500px) {
+    .docs-block {
+        padding: 1em;
+        border-bottom: 1px solid black;
+    }
+
+    .docs-head {
+        font-size: 30px;
+        letter-spacing: -1px;
+    }
+
+    .docs-details {
+        font-size: 13px;
+    }
+
+    .docs-video {
+        width: 100%;
+        box-sizing: border-box;
+        border-radius: 10px;
+    }
+}
+
+@media (min-width: 500px) {
+    .docs-block {
+        padding: 1em;
+        border-bottom: 1px solid black;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .docs-head {
+        font-size: 30px;
+        letter-spacing: -1px;
+    }
+
+    .docs-details {
+        font-size: 14px;
+    }
+
+    .docs-video {
+        width: 100%;
+        box-sizing: border-box;
+        border-radius: 10px;
+    }
+}

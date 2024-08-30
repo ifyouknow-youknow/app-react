@@ -236,6 +236,7 @@ export async function function_GetThingsGoing(ready) {
     }
 
     const data = await response.json();
+    console.log(data)
     if (data.success) {
       ready(true);
     }
@@ -251,6 +252,7 @@ export async function function_textToSpeech(text, setter) {
     const response = await axios.post(url, body, { responseType: "blob" });
     const blob = new Blob([response.data], { type: "audio/mp3" });
     const audioUrl = URL.createObjectURL(blob);
+    console.log(audioUrl); // Check if this URL is valid and accessible
     setter(audioUrl);
   } catch (error) {
     console.error("Error synthesizing speech:", error);

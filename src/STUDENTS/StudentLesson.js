@@ -230,8 +230,12 @@ export function StudentLesson() {
                           slides[0].Notes.replaceAll("jjj", "\n"),
                           (thisAudio) => {
                             const audio = new Audio(thisAudio);
-                            setCurrentAudio(audio);
-                            audio.play();
+                            if (audio.canPlayType('audio/mpeg')) {
+                              setCurrentAudio(audio);
+                              audio.play();
+                            } else {
+                              console.error('Audio format not supported by the browser.');
+                            }
                             audio.addEventListener("ended", () => {
                               setStillPlaying(false);
                             });

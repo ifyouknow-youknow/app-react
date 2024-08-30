@@ -98,7 +98,13 @@ export function StudentLessons() {
                           className="student-lesson-block separate_h align-center pointer"
                           key={l}
                           onClick={() => {
-                            navigate(`/student/lesson/${lesson.id}`);
+                            if (studentPlan
+                              .map((ting) => {
+                                return ting.id;
+                              })
+                              .includes(lesson.id)) {
+                              navigate(`/student/lesson/${lesson.id}`);
+                            }
                           }}
                         >
                           <p className="no student-lesson-name">
@@ -109,11 +115,11 @@ export function StudentLessons() {
                               return ting.id;
                             })
                             .includes(lesson.id) && (
-                            <PrimaryButton
-                              text={"Start"}
-                              classes={"fit-content"}
-                            />
-                          )}
+                              <PrimaryButton
+                                text={"Start"}
+                                classes={"fit-content"}
+                              />
+                            )}
                         </div>
                       );
                     })}

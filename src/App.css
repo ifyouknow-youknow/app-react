@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
 
+.body {
+  min-height: 95vh;
+}
+
 .main {
   box-sizing: border-box;
   display: block;
@@ -7,36 +11,46 @@
   margin-right: auto;
   margin-left: auto;
 }
+
 .jakarta {
   font-family: "Plus Jakarta Sans", sans-serif;
 }
+
 .no {
   padding: 0;
   margin: 0;
 }
+
 .padding {
   padding: 1em;
 }
+
 .padding_sm {
   padding: 10px;
 }
+
 .padding_h {
   padding-right: 1em;
   padding-left: 1em;
 }
+
 .padding_v {
   padding-top: 1em;
   padding-bottom: 1em;
 }
+
 .pointer {
   cursor: pointer;
 }
+
 .pointer:hover {
   opacity: 0.8;
 }
+
 .underline {
   text-decoration: underline;
 }
+
 .dash-main,
 .school-dash-main,
 .editor-dash {
@@ -49,71 +63,88 @@
   margin-right: auto;
   margin-left: auto;
 }
+
 .editor-dash {
   max-height: 100vh;
   box-sizing: border-box;
   overflow-y: hidden;
 }
+
 .separate_h {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
+
 .split {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
 }
+
 .back-arrow {
   font-size: 28px;
   padding: 0 1em;
   vertical-align: middle;
 }
+
 .side-by {
   display: flex;
   flex-direction: row;
   gap: 6px;
   align-items: center;
 }
+
 /*  */
 .red {
   color: #d6133b;
 }
+
 .green {
   color: #22af6b;
 }
+
 .blue {
   color: #117dfa;
 }
+
 .bg-blue {
   background-color: #117dfa;
   color: white;
 }
+
 .bg-light-blue {
   background-color: #cfdff1;
 }
+
 /*  */
 .text-center {
   text-align: center;
 }
+
 .align-center {
   align-items: center;
 }
+
 .center {
   display: block;
   margin-right: auto;
   margin-left: auto;
 }
+
 /*  */
 .normal_text {
   font-size: 14px;
 }
+
 .small_text {
   font-size: 12px;
 }
+
 .xsmall_text {
   font-size: 10px;
 }
+
 textarea {
   background-color: #eff1f7;
   border-radius: 10px;
@@ -125,6 +156,7 @@ textarea {
   font-size: 14px;
   box-sizing: border-box;
 }
+
 .input-text {
   background-color: #eff1f7;
   border-radius: 10px;
@@ -134,6 +166,7 @@ textarea {
   padding: 10px;
   font-size: 15px;
 }
+
 select {
   padding: 10px;
   width: 100%;
@@ -142,19 +175,23 @@ select {
   background-color: #eff1f7;
   border: 0;
 }
+
 .label {
   font-size: 13px;
   color: rgb(145, 145, 145);
 }
+
 /*  */
 .gap_sm {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
+
 .relative {
   position: relative;
 }
+
 /*  */
 .student-dash {
   background-color: #f5f5f5;
@@ -177,18 +214,20 @@ select {
   font-weight: 500;
   cursor: pointer;
 }
+
 .primary-button {
   padding: 10px 14px;
   border: 0;
   /* border: 1px solid #c3c0c0; */
-  background-color: #ccfd10;
+  background-color: #63CBFF;
   width: 100%;
   border-radius: 100px;
   font-size: 14px;
-  /* text-transform: uppercase; */
   font-weight: 500;
   cursor: pointer;
+  color: white;
 }
+
 .destructive-button {
   padding: 10px 14px;
   border: 0;
@@ -202,31 +241,37 @@ select {
   font-weight: 500;
   cursor: pointer;
 }
+
 .primary-button:hover,
 .destructive-button:hover,
 .cancel-button:hover {
   background-color: #dcd8d8;
 }
+
 .icon-btn {
   display: block;
   margin-right: auto;
   margin-left: auto;
   width: fit-content;
-  background-color: #ccfd10;
+  background-color: #63CBFF;
   padding: 6px;
   border-radius: 14px;
 }
+
 .icon-btn-icon {
   font-size: 40px;
   vertical-align: middle;
 }
+
 .icon-icon {
   font-size: 26px;
 }
+
 img {
   width: 100%;
   height: 100%;
 }
+
 .bubble {
   background-color: white;
   width: fit-content;
@@ -238,35 +283,44 @@ img {
   font-size: 14px;
   background-color: #16f1cd;
 }
+
 .divider {
   border-top: 1px solid #d2d5e0;
   margin: 20px 0px;
   width: 100%;
   box-sizing: border-box;
 }
+
 .fit-content {
   width: fit-content;
 }
+
 .bold {
   font-weight: 600;
 }
+
 .padding-h {
   padding-right: 1em;
   padding-left: 1em;
 }
+
 /*  */
-.divisions > div:not(:last-child) {
+.divisions>div:not(:last-child) {
   border-bottom: 1px solid #c5c5c5;
 }
+
 .hover:hover {
   background-color: #eff1f7;
 }
+
 .no-radius {
   border-radius: 0px;
 }
+
 .no-wrap {
   white-space: nowrap;
 }
+
 .no-display {
   display: none;
 }
@@ -277,24 +331,31 @@ img {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
 }
+
 /* Define keyframes for fading out */
 @keyframes fadeOut {
   from {
     opacity: 1;
   }
+
   to {
     opacity: 0;
   }
 }
+
 /* Apply the fadeIn animation */
 .fade-in {
-  animation: fadeIn 300ms ease-in forwards; /* 1s duration, ease-in timing function, forwards to keep the final state */
+  animation: fadeIn 300ms ease-in forwards;
+  /* 1s duration, ease-in timing function, forwards to keep the final state */
 }
+
 /* Apply the fadeOut animation */
 .fade-out {
-  animation: fadeOut 300ms ease-out forwards; /* 1s duration, ease-out timing function, forwards to keep the final state */
+  animation: fadeOut 300ms ease-out forwards;
+  /* 1s duration, ease-out timing function, forwards to keep the final state */
 }
