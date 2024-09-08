@@ -65,33 +65,35 @@ export function StudentTest() {
     const allNums = []
     const allInputs = []
     for (var input of inputs) {
-      const order = parseInt(input.name.split("-")[1])+1
+      const order = parseInt(input.name.split("-")[1]) + 1
       allNums.push(order)
-      allInputs.push({Order: order, Answer: input.value})
+      allInputs.push({ Order: order, Answer: input.value })
     }
     const noDupesNums = removeDuplicates(allNums)
-    
+
     for (var i of noDupesNums) {
       const thisQuestion = questions.find((ting) => ting.Order === i)
       const filteredInputs = allInputs.filter((ting) => ting.Order === i)
-      const answers = filteredInputs.map((ting) => {return ting.Answer}).join(", ")
+      const answers = filteredInputs.map((ting) => { return ting.Answer }).join(", ")
       const points = parseInt(thisQuestion.Points);
-      const correctAnswer = thisQuestion.Answers.length > 1 ? thisQuestion.Answers.filter((ting) => ting.Answer).map((ting) => {return ting.Choice}).join(", ") : thisQuestion.Answers.toString()
+      const correctAnswer = thisQuestion.Answers.length > 1 ? thisQuestion.Answers.filter((ting) => ting.Answer).map((ting) => { return ting.Choice }).join(", ") : thisQuestion.Answers.toString()
 
-      
+
       const instructions = `Based on the correctness of the pet grooming student's answer, give me a number up to ${points} points. Question is: ${thisQuestion.Question}. Student answer: '${answers}'. The correct answer is: '${correctAnswer}'. ONLY GIVE ME AN INTEGER NUMBER. No words or characters. And`
       await coco_GetResponse(instructions, (response) => {
-        const obj = {Order: i, EarnedPoints: parseInt(response), CorrectAnswer: correctAnswer, StudentAnswer: answers, Points: points}
+        const obj = { Order: i, EarnedPoints: parseInt(response), CorrectAnswer: correctAnswer, StudentAnswer: answers, Points: points }
         allResponses.push(obj)
       })
     }
-    
+
     // 
     for (var ta of textareas) {
+      const thisQuestion = questions.find((ting) => ting.Order === ta)
       const answer = ta.value.replaceAll("\n", "jjj");
       const thisOrder = parseInt(ta.id.split("-")[1]) + 1
       const points = parseInt(questions.find((ting) => ting.Order === thisOrder).Points)
-      const obj = { Order: thisOrder, Answer: answer, Points: points };
+      const correctAnswer = questions.find((ting) => ting.Order === thisOrder).Answers[0]
+      const obj = { Order: thisOrder, StudentAnswer: answer, Points: points, CorrectAnswer: correctAnswer };
       allResponses.push(obj);
     }
     const orderedAnswers = sortObjects(allResponses, "Order")
@@ -279,44 +281,44 @@ export function StudentTest() {
                             {/* SHOW MULTIPLE CHOICES */}
                             {qui.Answers.filter((ting) => ting.Answer)
                               .length === 1 && (
-                              <div>
-                                {qui.Answers.map((ans, a) => {
-                                  if (ans.Choice !== "") {
-                                    return (
-                                      <div key={a} className="side-by">
-                                        <input
-                                          type="radio"
-                                          name={`rbg-${q}`}
-                                          defaultChecked={false}
-                                          value={ans.Choice}
-                                        />
-                                        <p className="no">{ans.Choice}</p>
-                                      </div>
-                                    );
-                                  }
-                                })}
-                              </div>
-                            )}
+                                <div>
+                                  {qui.Answers.map((ans, a) => {
+                                    if (ans.Choice !== "") {
+                                      return (
+                                        <div key={a} className="side-by">
+                                          <input
+                                            type="radio"
+                                            name={`rbg-${q}`}
+                                            defaultChecked={false}
+                                            value={ans.Choice}
+                                          />
+                                          <p className="no">{ans.Choice}</p>
+                                        </div>
+                                      );
+                                    }
+                                  })}
+                                </div>
+                              )}
                             {qui.Answers.filter((ting) => ting.Answer).length >
                               1 && (
-                              <div>
-                                {qui.Answers.map((ans, a) => {
-                                  if (ans.Choice !== "") {
-                                    return (
-                                      <div key={a} className="side-by">
-                                        <input
-                                          type="checkbox"
-                                          name={`cbg-${q}`}
-                                          defaultChecked={false}
-                                          value={`${ans.Choice}`}
-                                        />
-                                        <p className="no">{ans.Choice}</p>
-                                      </div>
-                                    );
-                                  }
-                                })}
-                              </div>
-                            )}
+                                <div>
+                                  {qui.Answers.map((ans, a) => {
+                                    if (ans.Choice !== "") {
+                                      return (
+                                        <div key={a} className="side-by">
+                                          <input
+                                            type="checkbox"
+                                            name={`cbg-${q}`}
+                                            defaultChecked={false}
+                                            value={`${ans.Choice}`}
+                                          />
+                                          <p className="no">{ans.Choice}</p>
+                                        </div>
+                                      );
+                                    }
+                                  })}
+                                </div>
+                              )}
                           </div>
                         )}
                         {qui.Type === "short" && (
