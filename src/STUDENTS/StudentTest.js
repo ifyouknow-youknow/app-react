@@ -114,11 +114,21 @@ export function StudentTest() {
       args,
       (success) => {
         if (success) {
-          setLoading(false);
-          alert(
-            "Your school has been notified. You will be leave this page."
-          );
-          navigate("/student/tests");
+          firebase_CreateDocument('Notifications', randomString(25), {
+            SchoolId: me.SchoolId,
+            Date: new Date(),
+            Message: `${me.FirstName} ${me.LastName} has completed ${test.Name} TEST.`,
+            Type: "Test"
+          }, (success2) => {
+            if (success2) {
+              setLoading(false);
+              alert(
+                "Your school has been notified. You will be leave this page."
+              );
+              navigate("/student/tests");
+            }
+          })
+
         }
       }
     );
@@ -126,7 +136,9 @@ export function StudentTest() {
 
   useEffect(() => {
     auth_CheckSignedIn((person) => {
-      setMe(person);
+      firebase_GetDocument('Users', person.id, (thisPerson) => {
+        setMe(thisPerson)
+      })
       function_GetThingsGoing(setReady);
       firebase_GetDocument("Tests", testId, (thisTest) => {
         setTest(thisTest);
@@ -257,6 +269,7 @@ export function StudentTest() {
                   <p className="no">{formatTime(seconds)}</p>
                 </div>
               </div>
+              <br />
               <div className="test-main fade-in">
                 {questions
                   .sort((a, b) => a.Order - b.Order)
@@ -357,7 +370,7 @@ export function StudentTest() {
               <div className="lesson-bottom separate_h">
                 <div className="side-by">
                   <DestructiveButton
-                    text={"exit"}
+                    text={"Exit"}
                     onPress={() => {
                       setToggleExit(true);
                     }}

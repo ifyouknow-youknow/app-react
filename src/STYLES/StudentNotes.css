@@ -1,0 +1,247 @@
+@media (max-width: 500px) {
+    .course-notes-wrap {}
+
+
+    .course-notes-course {
+        background-color: #2B2D34;
+        color: white;
+        padding: 1em;
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    .course-notes-note {
+        border-top: 1px solid rgb(214, 213, 213);
+        font-size: 12px;
+        padding: 1em;
+    }
+
+    .course-notes-notes {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 12px;
+    }
+
+    .remove-btn {
+        border: 0;
+        color: red;
+        padding: 10px;
+        background-color: transparent;
+    }
+}
+
+@media (min-width: 501px) and (max-width: 600px) {
+    .course-notes-wrap {}
+
+
+    .course-notes-course {
+        background-color: #2B2D34;
+        color: white;
+        padding: 1em;
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    .course-notes-note {
+        border-top: 1px solid rgb(214, 213, 213);
+        font-size: 12px;
+        padding: 1em;
+    }
+
+    .course-notes-notes {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 12px;
+    }
+
+    .remove-btn {
+        border: 0;
+        color: red;
+        padding: 10px;
+        background-color: transparent;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 700px) {
+    .course-notes-wrap {}
+
+
+    .course-notes-course {
+        background-color: #2B2D34;
+        color: white;
+        padding: 1em;
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    .course-notes-note {
+        border-top: 1px solid rgb(214, 213, 213);
+        font-size: 12px;
+        padding: 1em;
+    }
+
+    .course-notes-notes {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 12px;
+    }
+
+    .remove-btn {
+        border: 0;
+        color: red;
+        padding: 10px;
+        background-color: transparent;
+    }
+}
+
+@media (min-width: 701px) and (max-width: 800px) {
+    .course-notes-wrap {}
+
+
+    .course-notes-course {
+        background-color: #2B2D34;
+        color: white;
+        padding: 1em;
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    .course-notes-note {
+        border-top: 1px solid rgb(214, 213, 213);
+        font-size: 12px;
+        padding: 1em;
+    }
+
+    .course-notes-notes {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 12px;
+    }
+
+    .remove-btn {
+        border: 0;
+        color: red;
+        padding: 10px;
+        background-color: transparent;
+    }
+}
+
+@media (min-width: 801px) and (max-width: 900px) {
+    .course-notes-wrap {}
+
+
+    .course-notes-course {
+        background-color: #2B2D34;
+        color: white;
+        padding: 1em;
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    .course-notes-note {
+        border-left: 1px solid rgb(214, 213, 213);
+        font-size: 12px;
+        padding: 1em;
+    }
+
+    .course-notes-notes {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 12px;
+    }
+
+    .note-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .remove-btn {
+        border: 0;
+        color: red;
+        padding: 10px;
+        background-color: transparent;
+    }
+}
+
+@media (min-width: 901px) and (max-width: 1000px) {
+    .course-notes-wrap {}
+
+
+    .course-notes-course {
+        background-color: #2B2D34;
+        color: white;
+        padding: 1em;
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    .course-notes-note {
+        border-left: 1px solid rgb(214, 213, 213);
+        font-size: 12px;
+        padding: 1em;
+    }
+
+    .course-notes-notes {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 12px;
+    }
+
+    .note-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .remove-btn {
+        border: 0;
+        color: red;
+        padding: 10px;
+        background-color: transparent;
+    }
+}
+
+@media (min-width: 1001px) {
+    .course-notes-wrap {}
+
+
+    .course-notes-course {
+        background-color: #2B2D34;
+        color: white;
+        padding: 1em;
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    .course-notes-note {
+        border-left: 1px solid rgb(214, 213, 213);
+        font-size: 12px;
+        padding: 1em;
+    }
+
+    .course-notes-notes {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 12px;
+        max-width: 950px;
+        margin: 0 auto;
+    }
+
+    .note-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .remove-btn {
+        border: 0;
+        color: red;
+        padding: 10px;
+        background-color: transparent;
+    }
+}

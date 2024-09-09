@@ -68,11 +68,21 @@ export function StudentHomework() {
       args,
       (success) => {
         if (success) {
-          setLoading(false);
-          alert(
-            "Your school has been notified. You will be leave this page."
-          );
-          navigate("/student/homeworks");
+          firebase_CreateDocument('Notifications', randomString(25), {
+            SchoolId: me.SchoolId,
+            Date: new Date(),
+            Message: `${me.FirstName} ${me.LastName} has completed ${homework.Name} HOMEWORK.`,
+            Type: 'Homework'
+          }, (success2) => {
+            if (success2) {
+              setLoading(false);
+              alert(
+                "Your school has been notified. You will be leave this page."
+              );
+              navigate("/student/homeworks");
+            }
+          })
+
         }
       }
     );
@@ -80,7 +90,9 @@ export function StudentHomework() {
 
   useEffect(() => {
     auth_CheckSignedIn((person) => {
-      setMe(person);
+      firebase_GetDocument('Users', person.id, (thisPerson) => {
+        setMe(thisPerson)
+      })
       function_GetThingsGoing(setReady);
       firebase_GetDocument("Homeworks", homeworkId, (thisHomework) => {
         setHomework(thisHomework);
@@ -192,6 +204,7 @@ export function StudentHomework() {
                   <p className="no">{formatTime(seconds)}</p>
                 </div>
               </div>
+              <br />
               <div className="homework-main fade-in">
                 {/* CONTENT HERE */}
                 {prompts.sort((a, b) => a.Order - b.Order).map((prompt, p) => {
@@ -212,7 +225,7 @@ export function StudentHomework() {
               <div className="lesson-bottom separate_h">
                 <div className="side-by">
                   <DestructiveButton
-                    text={"exit"}
+                    text={"Exit"}
                     onPress={() => {
                       setToggleExit(true);
                     }}

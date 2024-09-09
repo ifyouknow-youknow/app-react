@@ -27,6 +27,7 @@ import { SignUp } from "./STUDENTS/SignUp";
 import { Contact } from "./SDGA/Contact";
 import StudentDocs from "./STUDENTS/StudentDocs";
 import SchoolDocs from "./SCHOOLS/SchoolDocs";
+import StudentNotes from "./STUDENTS/StudentNotes";
 
 //
 const router = createBrowserRouter([
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
   {
     path: "/student/lessons",
     element: <StudentLessons />,
+  },
+  {
+    path: "/student/notes",
+    element: <StudentNotes />,
   },
   {
     path: "/student/lesson/:lessonId",

@@ -3,13 +3,16 @@ import { storage_DownloadMedia } from "../Firebase ";
 
 export function AsyncImage({ imagePath, width, height, radius }) {
   const [url, setUrl] = useState(null);
+  async function doThing() {
+    await storage_DownloadMedia(imagePath, (downloadedUrl) => {
+      setUrl(downloadedUrl);
+    });
+  }
   useEffect(() => {
     if (imagePath) {
-      storage_DownloadMedia(imagePath, (downloadedUrl) => {
-        setUrl(downloadedUrl);
-      });
+      doThing()
     }
-  }, [imagePath]);
+  }, [imagePath, url]);
   return (
     <div>
       {url !== null ? (

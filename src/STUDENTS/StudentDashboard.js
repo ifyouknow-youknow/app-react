@@ -102,10 +102,21 @@ export function StudentDashboard() {
           <br />
           <div className="student-dash-courses">
             {courses.map((course, c) => {
-              const thisOne =
-                sortObjects(course.Plan, "Order", "desc").length > 0
-                  ? sortObjects(course.Plan, "Order", "desc")[0]
-                  : null;
+              // Sort the course.Plan by 'Order' and find the first item that has no submission
+              const sortedPlans = sortObjects(course.Plan, "Order", "asc");
+              const nextOne = sortedPlans.find((plan) => {
+                if (plan.Type === "Lesson") {
+                  return submissions.filter((ting) => ting.LessonId === plan.id).length === 0;
+                }
+                if (plan.Type === "Homework") {
+                  return submissions.filter((ting) => ting.HomeworkId === plan.id).length === 0;
+                }
+                if (plan.Type === "Test") {
+                  return submissions.filter((ting) => ting.TestId === plan.id).length === 0;
+                }
+                return false;
+              });
+
               return (
                 <div key={c} className="student-dash-course">
                   <AsyncImage
@@ -118,89 +129,27 @@ export function StudentDashboard() {
                   <div>
                     <div className="student-dash-course-bottom">
                       <h3 className="no">{course.Name}</h3>
-                      <p className="no">
-                        {course.Desc.replaceAll("jjj", "\n")}
-                      </p>
+                      <p className="no">{course.Desc.replaceAll("jjj", "\n")}</p>
                     </div>
                     <div className="divider"></div>
-                    <div className="">
+                    <div>
                       {course.Plan.length > 0 ? (
                         <div>
                           <p className="no label">Upcoming:</p>
-                          <p className="no">{thisOne && thisOne.Name}</p>
+                          <p className="no blue">{nextOne ? nextOne.Name : "Waiting for next unlocked assignment."}</p>
                           <br />
-                          {/* BTN */}
-                          {/* LESSON */}
-                          {thisOne &&
-                            thisOne.Type === "Lesson" &&
-                            submissions.filter(
-                              (ting) => ting.LessonId === thisOne.id
-                            ).length === 0 && (
-                              <div
-                                className="student-dash-start-btn side-by align-center pointer"
-                                onClick={() => {
-                                  onChooseCourse(thisOne);
-                                }}
-                              >
-                                <p className="no">Open {thisOne.Type}</p>
-                                <IoArrowForward size={18} />
-                              </div>
-                            )}
-                          {thisOne &&
-                            thisOne.Type === "Lesson" &&
-                            submissions.filter(
-                              (ting) => ting.LessonId === thisOne.id
-                            ).length > 0 && (
-                              <p className="no blue normal_text">Completed</p>
-                            )}
-
-                            {/* HOMEWORK */}
-                            {thisOne &&
-                            thisOne.Type === "Homework" &&
-                            submissions.filter(
-                              (ting) => ting.HomeworkId === thisOne.id
-                            ).length === 0 && (
-                              <div
-                                className="student-dash-start-btn side-by align-center pointer"
-                                onClick={() => {
-                                  onChooseCourse(thisOne);
-                                }}
-                              >
-                                <p className="no">Open {thisOne.Type}</p>
-                                <IoArrowForward size={18} />
-                              </div>
-                            )}
-                          {thisOne &&
-                            thisOne.Type === "Homework" &&
-                            submissions.filter(
-                              (ting) => ting.HomeworkId === thisOne.id
-                            ).length > 0 && (
-                              <p className="no blue normal_text">Completed</p>
-                            )}
-
-                          {/* TESTS */}
-                          {thisOne &&
-                            thisOne.Type === "Test" &&
-                            submissions.filter(
-                              (ting) => ting.TestId === thisOne.id
-                            ).length === 0 && (
-                              <div
-                                className="student-dash-start-btn side-by align-center pointer"
-                                onClick={() => {
-                                  onChooseCourse(thisOne);
-                                }}
-                              >
-                                <p className="no">Open {thisOne.Type}</p>
-                                <IoArrowForward size={18} />
-                              </div>
-                            )}
-                          {thisOne &&
-                            thisOne.Type === "Test" &&
-                            submissions.filter(
-                              (ting) => ting.TestId === thisOne.id
-                            ).length > 0 && (
-                              <p className="no blue normal_text">Completed</p>
-                            )}
+                          {/* Render button or 'Completed' status */}
+                          {nextOne &&
+                            <div
+                              className="student-dash-start-btn side-by align-center pointer"
+                              onClick={() => {
+                                onChooseCourse(nextOne);
+                              }}
+                            >
+                              <p className="no">Open {nextOne.Type}</p>
+                              <IoArrowForward size={18} />
+                            </div>
+                          }
                         </div>
                       ) : (
                         <div>
@@ -212,7 +161,9 @@ export function StudentDashboard() {
                 </div>
               );
             })}
-            {courses.length === 0 && <p>No subscribed courses yet. Please talk to your school instructor.</p>}
+            {courses.length === 0 && (
+              <p>No subscribed courses yet. Please talk to your school instructor.</p>
+            )}
           </div>
         </div>
         <div className="student-dash-block">{/* AI */}</div>

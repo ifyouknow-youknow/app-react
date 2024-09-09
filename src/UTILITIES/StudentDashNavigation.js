@@ -10,6 +10,7 @@ import { IoDocumentTextOutline } from "react-icons/io5";
 import { HiOutlineReceiptPercent } from "react-icons/hi2";
 import { RxDashboard } from "react-icons/rx";
 import { MdOutlineArrowOutward } from "react-icons/md";
+import { SlNotebook } from "react-icons/sl";
 
 export function StudentDashNavigation() {
   const navigate = useNavigate();
@@ -45,6 +46,15 @@ export function StudentDashNavigation() {
         >
           <AiOutlineBook className="student-dash-icon" />
           <p className="no">Lessons</p>
+        </div>
+        <div
+          className="student-dash-link pointer"
+          onClick={() => {
+            navigate("/student/notes");
+          }}
+        >
+          <SlNotebook className="student-dash-icon" />
+          <p className="no">Notes</p>
         </div>
         <div
           className="student-dash-link pointer"
@@ -108,6 +118,14 @@ export function StudentDashNavigation() {
               }}
             >
               Lessons
+            </p>
+            <p
+              className="no pointer student-menu-link"
+              onClick={() => {
+                navigate("/student/notes");
+              }}
+            >
+              Notes
             </p>
             <p
               className="no pointer student-menu-link"

@@ -46,7 +46,7 @@ export function SchoolCourses() {
               Create Course
             </button>
           </div>
-          <div className="school-courses-notice-2">
+          {/* <div className="school-courses-notice-2">
             <div>
               <h1 className="no">
                 Save time and unlock the state approved SDGA Pet Grooming
@@ -61,7 +61,7 @@ export function SchoolCourses() {
               <br />
             </div>
             <button>Unlock Now</button>
-          </div>
+          </div> */}
         </div>
         <div className="school-dash-row-2">
           <div className="school-courses">

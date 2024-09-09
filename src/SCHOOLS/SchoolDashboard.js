@@ -1,22 +1,25 @@
 import { SchoolDashNavigation } from "../UTILITIES/SchoolDashNavigation";
 import "../STYLES/SchoolStudents.css";
+import "../STYLES/SchoolDashboard.css";
 import { useEffect, useState } from "react";
 import {
   auth_CheckSignedIn,
   firebase_CreateDocument,
+  firebase_DeleteDocument,
   firebase_GetAllDocumentsQueried,
   firebase_GetDocument,
   firebase_UpdateDocument,
 } from "../Firebase ";
-import { IoChevronDownSharp } from "react-icons/io5";
 import { Loading } from "../UTILITIES/Loading";
 import {
+  formatDate,
   randomString,
   removeDuplicatesByProperty,
   sortObjects,
 } from "../Functions";
-import { FaLock, FaLockOpen } from "react-icons/fa";
+import { FaLock, FaLockOpen, FaTrash } from "react-icons/fa";
 import ActionButtons from "../UTILITIES/ActionButtons";
+import { FaXmark } from "react-icons/fa6";
 
 export function SchoolDashboard() {
   // #region DECLARATIONS
@@ -34,6 +37,8 @@ export function SchoolDashboard() {
   const [toggleLockConfirmation, setToggleLockConfirmation] = useState(false);
   const [chosenStudent, setChosenStudent] = useState(null);
   const [chosenComp, setChosenComp] = useState(null);
+  // 
+  const [notifications, setNotifications] = useState([])
   // #endregion
 
   function onUnlockComponent(student, chosenCourse, comp) {
@@ -131,10 +136,24 @@ export function SchoolDashboard() {
       );
     }
   }
+  async function onRemoveNotif(notifId) {
+    setLoading(true)
+    await firebase_DeleteDocument('Notifications', notifId, (success) => {
+      if (success) {
+        setNotifications((prev) => removeDuplicatesByProperty([...prev.filter((ting) => ting.id !== notifId)], "id"))
+        setLoading(false)
+      }
+    })
+  }
 
   useEffect(() => {
     auth_CheckSignedIn((person) => {
       setMe(person);
+      firebase_GetAllDocumentsQueried('Notifications', [
+        { field: 'SchoolId', operator: "==", value: person.id }
+      ], (notifs) => {
+        setNotifications(notifs)
+      })
       firebase_GetAllDocumentsQueried(
         "Users",
         [{ field: "SchoolId", operator: "==", value: person.id }],
@@ -228,11 +247,40 @@ export function SchoolDashboard() {
         />
       )}
       <SchoolDashNavigation />
-      <h1 className="no school-students-title">Student Data</h1>
+      <h1 className="no school-students-title">Student Roster</h1>
       <div className="school-students-wrap">
         {courses.map((course, c) => {
           return (
             <div key={c} className="school-students-block">
+              {/* NOTIFICATIONS */}
+              {notifications.length > 0 &&
+                <div className="school-notifs-wrap">
+                  <h4 className="no">Notifications</h4>
+                  <br />
+                  <div className="school-notifs">
+                    {
+                      sortObjects(notifications, "Date", "asc").map((notif) => {
+                        return (
+                          <div className="school-notif separate_v">
+                            <div>
+                              <p className="no notif-mess">{notif.Message}</p>
+                              <br />
+                            </div>
+                            <div className="separate_h">
+                              <p className="no notif-date">{formatDate(new Date(notif.Date.seconds * 1000))}</p>
+                              <button onClick={() => {
+                                onRemoveNotif(notif.id)
+                              }} className="remove-notif pointer"><FaTrash size={14} /></button>
+                            </div>
+                          </div>
+                        )
+                      })
+                    }
+                  </div>
+                </div>
+              }
+              {/* 
+               */}
               <div className="school-students-course separate_h align-center">
                 <p className="no">{course.Name}</p>
                 {/* <IoChevronDownSharp size={20} /> */}
@@ -276,12 +324,11 @@ export function SchoolDashboard() {
                           return (
                             <div
                               key={p}
-                              className={`school-student-box pointer ${
-                                studentPlans.find(
-                                  (ting) =>
-                                    ting.CourseId === course.id &&
-                                    ting.StudentId === student.id
-                                ) &&
+                              className={`school-student-box pointer ${studentPlans.find(
+                                (ting) =>
+                                  ting.CourseId === course.id &&
+                                  ting.StudentId === student.id
+                              ) &&
                                 studentPlans
                                   .find(
                                     (ting) =>
@@ -292,9 +339,9 @@ export function SchoolDashboard() {
                                     return thisOne.id;
                                   })
                                   .includes(pl.id)
-                                  ? "unlocked"
-                                  : "locked"
-                              }`}
+                                ? "unlocked"
+                                : "locked"
+                                }`}
                               onClick={() => {
                                 const unlocked =
                                   studentPlans.find(
@@ -330,16 +377,16 @@ export function SchoolDashboard() {
                                   ting.CourseId === course.id &&
                                   ting.StudentId === student.id
                               ) &&
-                              studentPlans
-                                .find(
-                                  (ting) =>
-                                    ting.CourseId === course.id &&
-                                    ting.StudentId === student.id
-                                )
-                                .Plan.map((thisOne) => {
-                                  return thisOne.id;
-                                })
-                                .includes(pl.id) ? (
+                                studentPlans
+                                  .find(
+                                    (ting) =>
+                                      ting.CourseId === course.id &&
+                                      ting.StudentId === student.id
+                                  )
+                                  .Plan.map((thisOne) => {
+                                    return thisOne.id;
+                                  })
+                                  .includes(pl.id) ? (
                                 <FaLockOpen size={20} />
                               ) : (
                                 <FaLock size={20} />
@@ -351,6 +398,7 @@ export function SchoolDashboard() {
                     );
                   })}
               </div>
+
             </div>
           );
         })}

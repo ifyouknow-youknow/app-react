@@ -44,6 +44,9 @@ export function StudentLesson() {
   const [toggleExit, setToggleExit] = useState(false);
   const startTimeRef = useRef(new Date());
   const [lastSlide, setLastSlide] = useState(null);
+  // 
+  const [isSavedSlide, setIsSavedSlide] = useState(false);
+  const [toggleTakeNotes, setToggleTakeNotes] = useState(false);
   // #endregion
   //
   const formatTime = (seconds) => {
@@ -59,6 +62,7 @@ export function StudentLesson() {
     }, 1000);
   };
   function onFinishLesson() {
+    console.log(me)
     setLoading(true);
     const finalTime = formatTime(seconds);
     const completionId = randomString(25);
@@ -77,15 +81,25 @@ export function StudentLesson() {
     });
     firebase_CreateDocument("Completions", completionId, args, (success) => {
       if (success) {
-        setLoading(false);
-        alert("Your school has been notified. You will now leave this page.");
-        navigate("/student/lessons");
+        firebase_CreateDocument('Notifications', randomString(25), {
+          SchoolId: me.SchoolId,
+          Date: new Date(),
+          Message: `${me.FirstName} ${me.LastName} has completed ${lesson.Name} LESSON.`,
+          Type: 'Lesson'
+        }, (success2) => {
+          setLoading(false);
+          alert("Your school has been notified. You will now leave this page.");
+          navigate("/student/lessons");
+        })
+
       }
     });
+
   }
   function onExitLesson() {
     setLoading(true);
-    console.log(lastSlide);
+    currentAudio.pause()
+    setCurrentAudio(null)
     if (lastSlide !== null) {
       // UPDATE
       console.log(seconds);
@@ -113,10 +127,59 @@ export function StudentLesson() {
       );
     }
   }
+  function onSaveNotes() {
+    const notes = document.querySelector("#taNotes").value;
+    if (notes.length > 0) {
+      setLoading(true)
+      firebase_GetDocument('Notes', chosenSlide.id, (thisDoc) => {
+        if (thisDoc !== null) {
+          firebase_UpdateDocument('Notes', chosenSlide.id, {
+            SlidePath: chosenSlide.SlidePath,
+            UserId: me.id,
+            Notes: notes.replaceAll("\n", "jjj"),
+            CourseId: lesson.CourseId,
+            Order: chosenSlide.Order
+          }, (success) => {
+            if (success) {
+              setLoading(false)
+              alert('Your notes have been saved.')
+            }
+          })
+        } else {
+          firebase_CreateDocument('Notes', chosenSlide.id, {
+            SlidePath: chosenSlide.SlidePath,
+            UserId: me.id,
+            Notes: notes.replaceAll("\n", "jjj"),
+            CourseId: lesson.CourseId,
+            Order: chosenSlide.Order
+          }, (success) => {
+            if (success) {
+              setLoading(false)
+              alert('Your notes have been saved.')
+            }
+          })
+        }
+      })
+    }
+
+
+    setToggleTakeNotes(false);
+  }
+  async function onShowNotes() {
+    await firebase_GetDocument('Notes', chosenSlide.id, (thisDoc) => {
+      if (thisDoc !== null) {
+        if (document.querySelector("#taNotes")) {
+          document.querySelector("#taNotes").value = thisDoc.Notes.replaceAll("jjj", "\n")
+        }
+      }
+    })
+  }
 
   useEffect(() => {
     auth_CheckSignedIn((person) => {
-      setMe(person);
+      firebase_GetDocument('Users', person.id, (thisPerson) => {
+        setMe(thisPerson)
+      })
       function_GetThingsGoing(setReady);
       firebase_GetDocument("Lessons", lessonId, (thisLesson) => {
         setLesson(thisLesson);
@@ -129,6 +192,7 @@ export function StudentLesson() {
             var jumpToSlide = {};
             firebase_GetDocument("LastSlides", person.id, (thing) => {
               if (thing !== null) {
+                setIsSavedSlide(true)
                 setLastSlide(thing);
                 jumpToSlide = thing.Slide;
                 setChosenSlide(jumpToSlide);
@@ -225,9 +289,9 @@ export function StudentLesson() {
                     if (ready) {
                       setToggleStartLesson(true);
                       startTimer();
-                      if (slides[0].Notes !== " ") {
+                      if (isSavedSlide) {
                         function_textToSpeech(
-                          slides[0].Notes.replaceAll("jjj", "\n"),
+                          chosenSlide.Notes.replaceAll("jjj", "\n"),
                           (thisAudio) => {
                             const audio = new Audio(thisAudio);
                             if (audio.canPlayType('audio/mpeg')) {
@@ -242,9 +306,28 @@ export function StudentLesson() {
                           }
                         );
                       } else {
-                        setStillPlaying(false);
-                        setCurrentAudio(null);
+                        if (slides[0].Notes !== " ") {
+                          function_textToSpeech(
+                            slides[0].Notes.replaceAll("jjj", "\n"),
+                            (thisAudio) => {
+                              const audio = new Audio(thisAudio);
+                              if (audio.canPlayType('audio/mpeg')) {
+                                setCurrentAudio(audio);
+                                audio.play();
+                              } else {
+                                console.error('Audio format not supported by the browser.');
+                              }
+                              audio.addEventListener("ended", () => {
+                                setStillPlaying(false);
+                              });
+                            }
+                          );
+                        } else {
+                          setStillPlaying(false);
+                          setCurrentAudio(null);
+                        }
                       }
+
                     }
                   }}
                 >
@@ -265,6 +348,7 @@ export function StudentLesson() {
                   <p className="no">{formatTime(seconds)}</p>
                 </div>
               </div>
+              <br />
               <div className="lesson-main fade-in">
                 <div className="lesson-slide">
                   {slide.includes("Videos") ? (
@@ -283,7 +367,27 @@ export function StudentLesson() {
                 </div>
                 <div className="lesson-side">
                   <p className="no lesson-label">Notes</p>
+                  {toggleTakeNotes && <div className="notes-wrap">
+                    <div className="notes-top">
+                      <h4 className="no">Write down anything you want to remember from this slide.</h4>
+                      <p className="no">This slide and your typed notes will be saved for future reference in the Notes section of your portal.</p>
+                    </div>
+                    <textarea id="taNotes" className="jakarta" placeholder="ex. Remember that there are 30 types of breeds in the Herding Group..">
+                    </textarea>
+                    <div className="separate_h padding_sm_v">
+                      <div></div>
+                      <div className="side-by">
+                        <CancelButton text={'close'} onPress={() => {
+                          setToggleTakeNotes(false)
+                        }} />
+                        <button onClick={() => {
+                          onSaveNotes()
+                        }} className="take-notes-btn no-wrap">Save Notes</button>
+                      </div>
+                    </div>
+                  </div>}
                   <p className="lesson-slide-notes">{chosenNotes}</p>
+
                 </div>
               </div>
               <div className="lesson-bottom separate_h">
@@ -298,6 +402,7 @@ export function StudentLesson() {
                     <CancelButton
                       text={"Back"}
                       onPress={() => {
+                        setToggleTakeNotes(false)
                         if (currentAudio !== null) {
                           setStillPlaying(true);
                           currentAudio.pause();
@@ -331,12 +436,17 @@ export function StudentLesson() {
                   )}
                 </div>
                 <div className="side-by">
+                  {!toggleTakeNotes && <button onClick={() => {
+                    setToggleTakeNotes(true)
+                    onShowNotes()
+                  }} className="take-notes-btn">{toggleTakeNotes ? 'Close Notes' : 'Take Notes'}</button>}
                   {!stillPlaying && chosenSlide.Order < slides.length && (
                     <div>
                       <PrimaryButton
                         text={"Next Slide"}
                         classes={"fit-content"}
                         onPress={() => {
+                          setToggleTakeNotes(false)
                           const nextIdx = chosenSlide.Order + 1;
                           if (currentAudio !== null) {
                             currentAudio.pause();
@@ -425,10 +535,11 @@ export function StudentLesson() {
                           setChosenSlide(nextSlide);
                         });
                       }}
-                    />{" "}
+                    />
                   </div> */}
                 </div>
               </div>
+
             </div>
           )}
         </div>
