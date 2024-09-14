@@ -21,23 +21,23 @@ export default function SchoolNavigation() {
           <img src={logo} alt="Pet Gromming Edu Logo" className="logo-img" />
         </div>
         <div className="right">
-            <div className="nav-links">
-                <div className="nav-link pointer" onClick={() => {
-                    navigate("/schools/docs")
-                }}>
-                    <p className="no">Documentation</p>
-                </div>
-                <div className="nav-link pointer" onClick={() => {
-                    navigate("/contact")
-                }}>
-                    <p className="no">Contact</p>
-                </div>
-                <div className="nav-link login pointer" onClick={() => {
-                    navigate("/schools/login")
-                }}>
-                    <p className="no">Log In</p>
-                </div>
+          <div className="nav-links">
+            <div className="nav-link pointer" onClick={() => {
+              navigate("/school-docs")
+            }}>
+              <p className="no">Documentation</p>
             </div>
+            <div className="nav-link pointer" onClick={() => {
+              navigate("/contact")
+            }}>
+              <p className="no">Contact</p>
+            </div>
+            <div className="nav-link login pointer" onClick={() => {
+              navigate("/schools/login")
+            }}>
+              <p className="no">Log In</p>
+            </div>
+          </div>
           <div
             className="burger pointer"
             onClick={() => {
@@ -72,29 +72,29 @@ export default function SchoolNavigation() {
           </div>
           <div className="nav-body-middle">
             <div className="nav-body-link" onClick={() => {
-                setToggleNavBody(false)
-                navigate("/schools")
+              setToggleNavBody(false)
+              navigate("/schools")
             }}>
               <p className="no">Home</p>
               <MdArrowOutward className="nav-body-link-icon" />
             </div>
             <div className="nav-body-link" onClick={() => {
-                setToggleNavBody(false)
-                navigate("/schools/docs")
+              setToggleNavBody(false)
+              navigate("/schools/docs")
             }}>
               <p className="no">Documentation</p>
               <MdArrowOutward className="nav-body-link-icon" />
             </div>
             <div className="nav-body-link" onClick={() => {
-                setToggleNavBody(false)
-                navigate("/contact")
+              setToggleNavBody(false)
+              navigate("/contact")
             }}>
               <p className="no">Contact</p>
               <MdArrowOutward className="nav-body-link-icon" />
             </div>
             <div className="nav-body-link login" onClick={() => {
-                setToggleNavBody(false)
-                navigate("/schools/login")
+              setToggleNavBody(false)
+              navigate("/schools/login")
             }}>
               <p className="no">Login</p>
               <MdArrowOutward className="nav-body-link-icon" />
@@ -102,7 +102,7 @@ export default function SchoolNavigation() {
           </div>
           <div className="nav-body-bottom">
             <p className="no text-center">&copy; Copyright International Professional Groomers Inc. 2024 All Rights Reserved.</p>
-            </div>
+          </div>
         </div>
       )}
     </div>

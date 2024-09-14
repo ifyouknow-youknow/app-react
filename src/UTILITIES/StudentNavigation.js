@@ -21,28 +21,28 @@ export default function StudentNavigation() {
           <img src={logo} alt="Pet Gromming Edu Logo" className="logo-img" />
         </div>
         <div className="right">
-            <div className="nav-links">
-                <div className="nav-link pointer" onClick={() => {
-                    navigate("/docs")
-                }}>
-                    <p className="no">Documentation</p>
-                </div>
-                <div className="nav-link pointer" onClick={() => {
-                    navigate("/contact")
-                }}>
-                    <p className="no">Contact</p>
-                </div>
-                <div className="nav-link signup pointer" onClick={() => {
-                    navigate("/student/signup")
-                }}>
-                    <p className="no">Sign Up</p>
-                </div>
-                <div className="nav-link login pointer" onClick={() => {
-                    navigate("/student/login")
-                }}>
-                    <p className="no">Log In</p>
-                </div>
+          <div className="nav-links">
+            <div className="nav-link pointer" onClick={() => {
+              navigate("/student-docs")
+            }}>
+              <p className="no">Documentation</p>
             </div>
+            <div className="nav-link pointer" onClick={() => {
+              navigate("/contact")
+            }}>
+              <p className="no">Contact</p>
+            </div>
+            <div className="nav-link signup pointer" onClick={() => {
+              navigate("/student/signup")
+            }}>
+              <p className="no">Sign Up</p>
+            </div>
+            <div className="nav-link login pointer" onClick={() => {
+              navigate("/student/login")
+            }}>
+              <p className="no">Log In</p>
+            </div>
+          </div>
           <div
             className="burger pointer"
             onClick={() => {
@@ -77,36 +77,36 @@ export default function StudentNavigation() {
           </div>
           <div className="nav-body-middle">
             <div className="nav-body-link" onClick={() => {
-                setToggleNavBody(false)
-                navigate("/")
+              setToggleNavBody(false)
+              navigate("/")
             }}>
               <p className="no">Home</p>
               <MdArrowOutward className="nav-body-link-icon" />
             </div>
             <div className="nav-body-link" onClick={() => {
-                setToggleNavBody(false)
-                navigate("/docs")
+              setToggleNavBody(false)
+              navigate("/docs")
             }}>
               <p className="no">Documentation</p>
               <MdArrowOutward className="nav-body-link-icon" />
             </div>
             <div className="nav-body-link" onClick={() => {
-                setToggleNavBody(false)
-                navigate("/contact")
+              setToggleNavBody(false)
+              navigate("/contact")
             }}>
               <p className="no">Contact</p>
               <MdArrowOutward className="nav-body-link-icon" />
             </div>
             <div className="nav-body-link login" onClick={() => {
-                setToggleNavBody(false)
-                navigate("/student/signup")
+              setToggleNavBody(false)
+              navigate("/student/signup")
             }}>
               <p className="no">Sign Up</p>
               <MdArrowOutward className="nav-body-link-icon" />
             </div>
             <div className="nav-body-link login" onClick={() => {
-                setToggleNavBody(false)
-                navigate("/student/login")
+              setToggleNavBody(false)
+              navigate("/student/login")
             }}>
               <p className="no">Login</p>
               <MdArrowOutward className="nav-body-link-icon" />
@@ -114,7 +114,7 @@ export default function StudentNavigation() {
           </div>
           <div className="nav-body-bottom">
             <p className="no text-center">&copy; Copyright International Professional Groomers Inc. 2024 All Rights Reserved.</p>
-            </div>
+          </div>
         </div>
       )}
     </div>

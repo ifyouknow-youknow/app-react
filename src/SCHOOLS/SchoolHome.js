@@ -3,8 +3,10 @@ import img1 from "../IMAGES/doggo2.jpg";
 import SchoolNavigation from "../UTILITIES/SchoolNavigation";
 import SchoolFooter from "../UTILITIES/SchoolFooter";
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 export function SchoolHome() {
+  const navigate = useNavigate();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -29,7 +31,9 @@ export function SchoolHome() {
             for efficient and swift integration.
           </p>
           <br />
-          <button className="pointer">Learn More</button>
+          <button onClick={() => {
+            navigate('/contact')
+          }} className="pointer">Get Started</button>
         </div>
         <div className="home-panel-1-right">
           <img src={img1} alt="Dog holding a rose." />

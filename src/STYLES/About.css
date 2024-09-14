@@ -1,0 +1,9 @@
+.about-wrap {
+    padding: 1em;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.about-wrap h2 {
+    font-size: 26px;
+}

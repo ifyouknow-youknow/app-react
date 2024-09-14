@@ -20,22 +20,6 @@ export default function Footer() {
           <div
             className="footer-link pointer underline"
             onClick={() => {
-              navigate("/");
-            }}
-          >
-            <p className="no">Main Site</p>
-          </div>
-          <div
-            className="footer-link pointer underline"
-            onClick={() => {
-              navigate("/SDGA/articles");
-            }}
-          >
-            <p className="no">Articles</p>
-          </div>
-          <div
-            className="footer-link pointer underline"
-            onClick={() => {
               navigate("/contact");
             }}
           >
@@ -44,10 +28,10 @@ export default function Footer() {
           <div
             className="footer-link pointer underline"
             onClick={() => {
-              navigate("/SDGA/login");
+              navigate("/about");
             }}
           >
-            <p className="no">Log In</p>
+            <p className="no">About</p>
           </div>
         </div>
         <div className="footer-3">

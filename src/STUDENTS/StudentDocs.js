@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import StudentNavigation from '../UTILITIES/StudentNavigation'
-import Footer from '../UTILITIES/Footer'
 import { firebase_GetAllDocuments, storage_DownloadMedia } from '../Firebase ';
 import { removeDuplicatesByProperty, sortObjects } from '../Functions';
 import '../STYLES/StudentDocs.css'
 import { Accordion } from '../COMPONENTS/Accordion';
 import { FaChevronCircleDown } from 'react-icons/fa';
+import SchoolFooter from '../UTILITIES/SchoolFooter';
 
 export default function StudentDocs() {
     const [tutorialObjects, setTutorialObjects] = useState([]);
@@ -47,7 +47,7 @@ export default function StudentDocs() {
                     })
                 }
             </div>
-            <Footer />
+            <SchoolFooter />
         </div>
     )
 }

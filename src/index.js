@@ -25,6 +25,7 @@ import { StudentGrades } from "./STUDENTS/StudentGrades";
 import { SchoolDetails } from "./SDGA/SchoolDetails";
 import { SignUp } from "./STUDENTS/SignUp";
 import { Contact } from "./SDGA/Contact";
+import { About } from "./SDGA/About";
 import StudentDocs from "./STUDENTS/StudentDocs";
 import SchoolDocs from "./SCHOOLS/SchoolDocs";
 import StudentNotes from "./STUDENTS/StudentNotes";
@@ -36,8 +37,16 @@ const router = createBrowserRouter([
     element: <StudentHome />,
   },
   {
-    path: "/docs",
+    path: "/student-docs",
     element: <StudentDocs />,
+  },
+  {
+    path: "/school-docs",
+    element: <SchoolDocs />,
+  },
+  {
+    path: "/about",
+    element: <About />,
   },
   {
     path: "/student/login",

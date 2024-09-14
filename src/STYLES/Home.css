@@ -4,7 +4,7 @@
     padding: 1em;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
   }
 
   .home-panel-1-left h1 {
@@ -48,7 +48,7 @@
     padding: 1em;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
   }
 
   .home-panel-1-left h1 {
@@ -92,7 +92,7 @@
     padding: 1em;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
   }
 
   .home-panel-1-left h1 {
@@ -138,7 +138,7 @@
     padding: 1em;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
   }
 
   .home-panel-1-left h1 {
@@ -186,7 +186,7 @@
     padding: 1em;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
   }
 
   .home-panel-1-left h1 {
@@ -234,7 +234,7 @@
     padding: 3em 2em;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 15px;
+    gap: 20px;
   }
 
   .home-panel-1-left h1 {
@@ -282,7 +282,7 @@
     padding: 3em 2em;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 15px;
+    gap: 20px;
   }
 
   .home-panel-1-left h1 {

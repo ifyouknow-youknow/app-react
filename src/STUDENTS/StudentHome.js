@@ -7,8 +7,10 @@ import "../STYLES/StudentHome.css";
 import { FaBookBookmark } from "react-icons/fa6";
 import { MdTypeSpecimen } from "react-icons/md";
 import { IoSchool } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
 
 export function StudentHome() {
+  const navigate = useNavigate();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -33,7 +35,9 @@ export function StudentHome() {
             assignments, and assessments.
           </p>
           <br />
-          <button className="pointer">Join Now</button>
+          <button onClick={() => {
+            navigate('/contact')
+          }} className="pointer">Join Now</button>
         </div>
         <div className="home-panel-1-right">
           <img src={img1} alt="Dog holding a rose." />

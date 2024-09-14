@@ -30,26 +30,26 @@ export default function SchoolFooter() {
           <div
             className="footer-link pointer underline"
             onClick={() => {
-              navigate("/");
+              navigate("/student-docs");
             }}
           >
-            <p className="no">Main Site</p>
+            <p className="no">Student Docs</p>
           </div>
           <div
             className="footer-link pointer underline"
             onClick={() => {
-              navigate("/docs");
+              navigate("/school-docs");
             }}
           >
-            <p className="no">Documentation</p>
+            <p className="no">School Docs</p>
           </div>
           <div
             className="footer-link pointer underline"
             onClick={() => {
-              navigate("/SDGA/articles");
+              navigate("/about");
             }}
           >
-            <p className="no">Articles</p>
+            <p className="no">About</p>
           </div>
           <div
             className="footer-link pointer underline"
