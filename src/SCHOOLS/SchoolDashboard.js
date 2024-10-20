@@ -162,6 +162,9 @@ export function SchoolDashboard() {
           for (var stud of things) {
             firebase_GetDocument("CourseSubscriptions", stud.id, (sub) => {
               // GET COURSE PLAN
+              if (sub == null) {
+                return;
+              }
               const courseId = sub.CourseId;
               firebase_GetDocument("Plans", courseId, (things) => {
                 if (things !== null) {

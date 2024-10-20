@@ -12,26 +12,30 @@
     width: 100%;
     box-sizing: border-box;
   }
+
   .mobile-icon {
     font-size: 80px;
     display: block;
     margin-left: auto;
     margin-right: auto;
     color: #28d782;
-    padding: ;
   }
+
   .mobile-title {
     font-size: 26px;
     text-align: center;
   }
+
   .mobile-caption {
     font-size: 14px;
     text-align: center;
   }
+
   .desktop {
     display: none;
   }
 }
+
 @media (min-width: 500px) and (max-width: 600px) {
   .mobile {
     position: fixed;
@@ -46,26 +50,30 @@
     width: 100%;
     box-sizing: border-box;
   }
+
   .mobile-icon {
     font-size: 80px;
     display: block;
     margin-left: auto;
     margin-right: auto;
     color: #28d782;
-    padding: ;
   }
+
   .mobile-title {
     font-size: 26px;
     text-align: center;
   }
+
   .mobile-caption {
     font-size: 14px;
     text-align: center;
   }
+
   .desktop {
     display: none;
   }
 }
+
 @media (min-width: 600px) and (max-width: 700px) {
   .mobile {
     position: fixed;
@@ -80,26 +88,30 @@
     width: 100%;
     box-sizing: border-box;
   }
+
   .mobile-icon {
     font-size: 80px;
     display: block;
     margin-left: auto;
     margin-right: auto;
     color: #28d782;
-    padding: ;
   }
+
   .mobile-title {
     font-size: 26px;
     text-align: center;
   }
+
   .mobile-caption {
     font-size: 14px;
     text-align: center;
   }
+
   .desktop {
     display: none;
   }
 }
+
 @media (min-width: 700px) and (max-width: 800px) {
   .mobile {
     position: fixed;
@@ -114,26 +126,30 @@
     width: 100%;
     box-sizing: border-box;
   }
+
   .mobile-icon {
     font-size: 80px;
     display: block;
     margin-left: auto;
     margin-right: auto;
     color: #28d782;
-    padding: ;
   }
+
   .mobile-title {
     font-size: 26px;
     text-align: center;
   }
+
   .mobile-caption {
     font-size: 14px;
     text-align: center;
   }
+
   .desktop {
     display: none;
   }
 }
+
 @media (min-width: 800px) and (max-width: 900px) {
   .mobile {
     position: fixed;
@@ -148,26 +164,30 @@
     width: 100%;
     box-sizing: border-box;
   }
+
   .mobile-icon {
     font-size: 80px;
     display: block;
     margin-left: auto;
     margin-right: auto;
     color: #28d782;
-    padding: ;
   }
+
   .mobile-title {
     font-size: 26px;
     text-align: center;
   }
+
   .mobile-caption {
     font-size: 14px;
     text-align: center;
   }
+
   .desktop {
     display: none;
   }
 }
+
 @media (min-width: 900px) and (max-width: 1000px) {
   .mobile {
     position: fixed;
@@ -182,36 +202,43 @@
     width: 100%;
     box-sizing: border-box;
   }
+
   .mobile-icon {
     font-size: 80px;
     display: block;
     margin-left: auto;
     margin-right: auto;
     color: #28d782;
-    padding: ;
   }
+
   .mobile-title {
     font-size: 26px;
     text-align: center;
   }
+
   .mobile-caption {
     font-size: 14px;
     text-align: center;
   }
+
   .desktop {
     display: none;
   }
 }
+
 @media (min-width: 1000px) {
   .editor {
     position: relative;
   }
+
   .mobile {
     display: none;
   }
+
   .desktop {
     display: block;
   }
+
   .modal {
     position: fixed;
     top: 0;
@@ -225,6 +252,7 @@
     flex-direction: column;
     justify-content: space-between;
   }
+
   .modal-block {
     width: 400px;
     background-color: white;
@@ -232,19 +260,24 @@
     margin-left: auto;
     margin-right: auto;
     padding: 1em;
+    overflow-y: scroll;
   }
+
   .modal-block h2 {
     font-size: 20px;
     letter-spacing: -1px;
   }
+
   .modal-block-caption {
     font-size: 14px;
     padding: 6px 0;
   }
+
   .modal-block-label {
     font-size: 12px;
     padding: 6px 0;
   }
+
   .modal-block-input {
     padding: 10px;
     width: 100%;
@@ -253,6 +286,7 @@
     background-color: #eff1f7;
     border-radius: 6px;
   }
+
   .modal-block-textarea {
     padding: 10px;
     width: 100%;
@@ -262,6 +296,7 @@
     border-radius: 6px;
     height: 120px;
   }
+
   .modal-img {
     width: 100%;
     height: 200px;
@@ -269,15 +304,19 @@
     border-radius: 8px;
     background-color: #d2d7e6;
   }
+
   .modal-img img {
     object-fit: contain;
   }
+
   .editor-top {
     padding: 8px;
   }
+
   .editor-title {
     font-size: 16px;
   }
+
   .editor-main {
     width: 100%;
     height: 100%;
@@ -287,6 +326,7 @@
     grid-template-columns: 1fr 3fr;
     gap: 15px;
   }
+
   .editor-left {
     background-color: white;
     border-radius: 10px;
@@ -295,20 +335,26 @@
     max-height: 92vh;
     /* padding: 1em; */
   }
+
   .editor-left-blocks {
     display: flex;
     flex-direction: column;
   }
-  .editor-left-blocks > div:not(:last-child) {
-    border-bottom: 1px solid #e0dddd; /* You can adjust the color and thickness as needed */
+
+  .editor-left-blocks>div:not(:last-child) {
+    border-bottom: 1px solid #e0dddd;
+    /* You can adjust the color and thickness as needed */
   }
+
   .editor-left-block {
     padding: 15px;
     /* border-radius: 4px; */
   }
+
   .editor-left-block:hover {
     background-color: #eceff4;
   }
+
   .editor-right {
     box-sizing: border-box;
     background-color: white;
@@ -316,6 +362,7 @@
     overflow-y: scroll;
     max-height: 92vh;
   }
+
   .editor-head {
     font-size: 20px;
     border-bottom: 1px solid #eceff4;
@@ -324,43 +371,55 @@
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
   }
+
   .editor-left-head {
     font-size: 16px;
     font-weight: 400;
   }
+
   .editor-left-icon {
     font-size: 22px;
   }
+
   .editor-header {
     font-size: 20px;
   }
+
   .editor-lessons-wrap {
     display: flex;
     flex-direction: column;
   }
-  .editor-lessons-wrap > div:not(:last-child) {
-    border-bottom: 1px solid #e3dddd; /* You can adjust the color and thickness as needed */
+
+  .editor-lessons-wrap>div:not(:last-child) {
+    border-bottom: 1px solid #e3dddd;
+    /* You can adjust the color and thickness as needed */
   }
+
   .editor-lessons-wrap div {
     padding: 14px;
     font-size: 14px;
     background-color: #eff1f7;
   }
+
   .editor-lessons-wrap div:hover {
     background-color: #d1d5e1;
   }
+
   .editor-top-block {
     padding: 18px;
     background-color: #d2d7e6;
     margin: 12px 0;
   }
+
   .editor-top-block p {
     font-size: 12px;
     color: #6a6969;
   }
+
   .editor-top-block-icon {
     font-size: 22px;
   }
+
   .editor-block-pair {
     padding: 10px;
     display: flex;
@@ -372,12 +431,14 @@
     font-size: 14px;
     color: #454545;
   }
+
   .editor-block-pair-small {
     font-size: 12px;
     width: 500px;
     color: #4a4949;
     padding: 6px 0px;
   }
+
   .editor-sub {
     padding: 10px;
     display: flex;
@@ -391,10 +452,12 @@
     margin: 0px 10px;
     box-sizing: border-box;
   }
+
   .editor-sub p {
     font-size: 14px;
     color: #454545;
   }
+
   .editor-sub-textarea {
     padding: 10px;
     width: 100%;
@@ -404,6 +467,7 @@
     min-height: 220px;
     box-sizing: border-box;
   }
+
   .editor-block-pair input[type="text"] {
     padding: 10px;
     width: 100%;
@@ -412,6 +476,7 @@
     border: 0;
     background-color: #eff1f7;
   }
+
   .editor-block-pair textarea {
     padding: 10px;
     width: 100%;
@@ -421,9 +486,11 @@
     background-color: #eff1f7;
     min-height: 150px;
   }
+
   .editor-slide-main {
     padding: 1em;
   }
+
   .editor-slide-wrap {
     background-color: #eff1f7;
     width: 100%;
@@ -434,11 +501,13 @@
     flex-direction: column;
     justify-content: space-between;
   }
+
   .editor-slide-wrap p {
     font-size: 20px;
     font-weight: 600;
     color: #4a4949;
   }
+
   .editor-slide-wrap-icon {
     text-align: center;
     display: block;
@@ -447,6 +516,7 @@
     font-size: 30px;
     color: #4a4949;
   }
+
   .editor-slide-img {
     width: 100%;
     height: 300px;
@@ -454,20 +524,24 @@
     border: 1px dashed rgb(124, 122, 122);
     background-color: #eff1f7;
   }
+
   .editor-slide-img img {
     width: 100%;
     height: 100%;
     object-fit: contain;
   }
+
   .editor-slide-img p {
     font-size: 14px;
     padding: 10px;
     color: #7b7474;
   }
+
   .editor-btn {
     width: 200px;
     padding: 1em;
   }
+
   .toggle-options {
     display: flex;
     flex-direction: row;
@@ -477,32 +551,39 @@
     border-radius: 100px;
     margin-left: 10px;
   }
+
   .toggle-option {
     padding: 5px 12px;
     border-radius: 100px;
     font-size: 12px;
   }
+
   .chosen {
     background-color: #ffffff;
   }
+
   .editor-slides {
     display: flex;
     flex-direction: column;
   }
+
   .editor-slide {
     padding: 10px;
     font-size: 16px;
   }
+
   .editor-slide:hover {
     background-color: #eff1f7;
     cursor: pointer;
   }
+
   .editor-inputs {
     display: flex;
     flex-direction: column;
     gap: 4px;
   }
 }
+
 /* PLAN */
 
 @media (min-width: 1000px) {
@@ -511,10 +592,12 @@
     padding: 10px;
     font-weight: 500;
   }
+
   .editor-notice {
     background-color: rgba(255, 85, 0, 0.1);
     padding: 0 12px;
   }
+
   .editor-notice-icon {
     font-size: 22px;
     width: 35px;
@@ -522,25 +605,33 @@
     color: rgb(255, 89, 0);
     vertical-align: middle;
   }
+
   .editor-notice p {
     font-size: 15px;
     color: red;
   }
-  .editor-plan-wrap > div:not(:last-child) {
-    border-bottom: 1px solid #ebebeb; /* You can adjust the color and thickness as needed */
+
+  .editor-plan-wrap>div:not(:last-child) {
+    border-bottom: 1px solid #ebebeb;
+    /* You can adjust the color and thickness as needed */
   }
+
   .editor-plan-block {
     padding: 5px 12px;
   }
+
   .editor-bg-lesson {
     background-color: #33ffe0;
   }
+
   .editor-bg-homework {
     background-color: #7ae0ff;
   }
+
   .editor-bg-test {
     background-color: #90b8fe;
   }
+
   .editor-plan-icon {
     vertical-align: middle;
   }
